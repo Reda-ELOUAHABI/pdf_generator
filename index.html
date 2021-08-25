@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html dir="rtl" lang="ar">
+
 
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
     <title>jsPDF Arabic Font Example</title>
     <style>
         @font-face {
             font-family: titleFont;
             src: url(Lalezar-Regular.ttf);
+        }
+
+        #divIdToPrint {
+            font-size: 5px;
+            text-align: center;
+        }
+    </style>
+    <style>
+        table,
+        th,
+        td {
+            border: 0.2px solid black;
+            /* border-radius: 10px; */
         }
     </style>
 </head>
@@ -23,7 +38,11 @@
         height: 1.5px;
         background-color: rgb(77, 74, 228);
         "></div>
-        <div>
+        <div style="
+        border: 1px solid  rgb(77, 74, 228);
+        border-bottom-right-radius: 5em 5em;
+border-bottom-left-radius:  5em 5em;
+        ">
             <h1 style="font-size: 12px;
             font-family: titleFont ;
             text-align: center;
@@ -54,8 +73,192 @@
             </p>
 
 
+
+
+        </div>
+        <div style="display: flex;">
+            <p dir="rtl" style="
+            /* position: relative; */
+            text-align: right;
+            font-size: 5px;
+
+            ">
+                التاريخ : ...................ه
+
+            </p>
+            <div style="
+            margin-right: 20px;
+            margin-top: 2px;
+            height: 7px;
+            width: 20px;
+            border-radius: 10px;
+            border: 1px solid rgb(86, 86, 226) ;
+            text-align: center;
+            ">
+                <p style="
+                color: rgb(86, 86, 226);
+                margin-top: 2px;
+                /* text-align: center; */
+            font-size: 4px;
+            font-weight: 1000;
+
+                
+                ">
+                    فاتورة &nbsp; نقدا
+                </p>
+            </div>
+
+        </div>
+        <div style="display: flex;margin-top: -02px;">
+            <p dir="rtl" style="
+            /* position: relative; */
+            text-align: right;
+            font-size: 5px;
+
+            ">
+                السياد و السادة : ..........................ه
+            </p>
+            <div style="width: 17px;
+            
+            ">
+
+            </div>
+            <img src="./mobile.png" height="10px" alt="mobile" />
+            <p dir="rtl" style="
+            /* position: relative; */
+            text-align: right;
+            font-size: 5px;
+
+            ">
+                موبايل : ...........................ه
+            </p>
         </div>
 
+
+        <div>
+
+
+            <table style="width:100%;
+            font-size: 3px;
+                       border-collapse:collapse;
+                       /* border-radius: 100em; */
+                        overflow: hidden;        ">
+                <tr>
+                    <th colspan="5">المنطقة</th>
+                    <th>
+                        قطعة
+                    </th>
+                    <th>
+                        شارع
+                    </th>
+                    <th>
+                        جادة
+                    </th>
+                    <th>
+                        منزل
+                    </th>
+                    <th>
+                        دور
+                    </th>
+                    <th>
+                        شقة
+                    </th>
+
+
+
+                </tr>
+                <tr style="height: 10px;">
+                    <td colspan="5"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table>
+        </div>
+
+
+        <div style="height: 10px;">
+
+        </div>
+        <div>
+            <table style="width:100%;
+            font-size: 3px;
+                       border-collapse:collapse;
+                       /* border-radius: 100em; */
+                        overflow: hidden;        ">
+                <tr>
+                    <th colspan="5">القيمة الاجمالية</th>
+                    <th>
+                        سعر الوحدة
+                    </th>
+                    <th>
+                        الكمية
+                    </th>
+                    <th>
+                        التفاصيل
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+
+            </table>
+        </div>
+        <div style="
+            /* margin-right: 20px; */
+            margin-top: 12px;
+            height: 17px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgb(86, 86, 226) ;
+            text-align: center;
+            ">
+            <p style="
+                color: rgb(86, 86, 226);
+                margin-top: 2px;
+                /* text-align: center; */
+            font-size: 4px;
+            font-weight: 1000;
+
+                
+                ">
+                البضاعه المباعه لا ترد ولا تستبدل ما على السهو والخطا
+
+            </p>
+        </div>
+
+    </div>
 
     </div>
     <button onclick="myFunction()">
@@ -63,7 +266,7 @@
     </button>
 </body>
 <script src="  https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script src="  https://unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>
+<script src="html2canvas.js"></script>
 <script>
 
     function myFunction() {
