@@ -180,17 +180,20 @@ border-bottom-left-radius:  5em 5em;
         </div>
 
 
-        <div style="height: 10px;">
+        <!-- <div style="height: 100px;">
 
-        </div>
+        </div> -->
+
         <div>
-            <table style="width:100%;
+            <table style="
+            
+            width:100%;
             font-size: 3px;
                        border-collapse:collapse;
                        /* border-radius: 100em; */
                         overflow: hidden;        ">
                 <tr>
-                    <th colspan="5">القيمة الاجمالية</th>
+                    <th>القيمة الاجمالية</th>
                     <th>
                         سعر الوحدة
                     </th>
@@ -202,31 +205,31 @@ border-bottom-left-radius:  5em 5em;
                     </th>
                 </tr>
                 <tr>
-                    <td colspan="5"></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="5"></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td colspan="5"></td>
+                    <td ></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td colspan="5"></td>
+                    <td ></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td colspan="5"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td ></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -235,11 +238,13 @@ border-bottom-left-radius:  5em 5em;
 
             </table>
         </div>
+        
+
         <div style="
             /* margin-right: 20px; */
-            margin-top: 12px;
+            margin-top: 2px;
             height: 17px;
-            width: 100%;
+            width: 90%;
             border-radius: 10px;
             border: 1px solid rgb(86, 86, 226) ;
             text-align: center;
@@ -250,15 +255,13 @@ border-bottom-left-radius:  5em 5em;
                 /* text-align: center; */
             font-size: 4px;
             font-weight: 1000;
-
-                
                 ">
                 البضاعه المباعه لا ترد ولا تستبدل ما على السهو والخطا
 
             </p>
         </div>
 
-    </div>
+
 
     </div>
     <button onclick="myFunction()">
@@ -280,7 +283,14 @@ border-bottom-left-radius:  5em 5em;
                 const imgProps = pdf.getImageProperties(imgData);
                 const pdfWidth = pdf.internal.pageSize.getWidth();
                 const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+                // var width = doc.internal.pageSize.getWidth();
+                // var height = doc.internal.pageSize.getHeight();
+
+                pdf.addImage(imgData, 'PNG', 0, -40, pdfWidth, pdfHeight);
+
+                // pdf.addImage(imgData, 'PNG', -10, -185, pdfWidth, pdfHeight);
+                // pdf.addImage(imgData, 'PNG', 0, 0, width, height);
                 pdf.save("download.pdf");
             });
     }
