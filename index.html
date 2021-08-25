@@ -16,7 +16,7 @@
     border: 0.3px solid rgb(238, 46, 46);
     /* the right dimensions */
     width: 147.83px;
-    height: 196px;
+    /* height: 196px; */
     
     ">
         <div style="
@@ -41,7 +41,7 @@
                 و
                 المفروشات
             </h1>
-            <!-- <p style="font-size: 4px;
+            <p style="font-size: 4px;
             margin-top: -6px;
             text-align: center;
             ">
@@ -52,8 +52,8 @@
                 <br>
                 وكيل معتمد لدى شركه البغلي لصناعات الاسفنج
             </p>
-        
-         -->
+
+
         </div>
 
 
@@ -71,8 +71,13 @@
         html2canvas(input)
             .then((canvas) => {
                 const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF('p', 'px', 'a5');
-                pdf.addImage(imgData, 'PNG', 0, 0);
+                const pdf = new jsPDF('p', 'px', 'a5', {
+                    orientation: 'landscape',
+                });
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
                 pdf.save("download.pdf");
             });
     }
