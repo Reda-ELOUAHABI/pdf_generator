@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jsPDF Arabic Font Example</title>
+    <style>
+        @font-face {
+            font-family: titleFont;
+            src: url(Lalezar-Regular.ttf);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divIdToPrint" style="
+    border: 0.3px solid rgb(238, 46, 46);
+    /* the right dimensions */
+    width: 147.83px;
+    height: 196px;
+    
+    ">
+        <div style="
+        height: 1.5px;
+        background-color: rgb(77, 74, 228);
+        "></div>
+        <div>
+            <h1 style="font-size: 12px;
+            font-family: titleFont ;
+            text-align: center;
+            ">
+                شركه
+                <span style="
+                color:aliceblue;
+                background-color: blue;
+                border-radius: 10px;
+                ">
+                    العربيه
+                </span>
+
+                للاثاث
+                و
+                المفروشات
+            </h1>
+            <!-- <p style="font-size: 4px;
+            margin-top: -6px;
+            text-align: center;
+            ">
+                الجهراء الصناعيه
+                -
+                مقابل سوق السرحان رقم
+                (3)
+                <br>
+                وكيل معتمد لدى شركه البغلي لصناعات الاسفنج
+            </p>
+        
+         -->
+        </div>
+
+
+    </div>
+    <button onclick="myFunction()">
+        download
+    </button>
+</body>
+<script src="  https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="  https://unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>
+<script>
+
+    function myFunction() {
+        const input = document.getElementById('divIdToPrint');
+        html2canvas(input)
+            .then((canvas) => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'px', 'a5');
+                pdf.addImage(imgData, 'PNG', 0, 0);
+                pdf.save("download.pdf");
+            });
+    }
+
+</script>
+
+</html>
