@@ -211,13 +211,7 @@ border-bottom-left-radius:  5em 5em;
                     <td></td>
                 </tr>
                 <tr>
-                    <td ></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td ></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -229,16 +223,22 @@ border-bottom-left-radius:  5em 5em;
                     <td></td>
                 </tr>
                 <tr>
-                    <td ></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
                 </tr>
 
             </table>
         </div>
-        
+
 
         <div style="
             /* margin-right: 20px; */
@@ -264,37 +264,68 @@ border-bottom-left-radius:  5em 5em;
 
 
     </div>
-    <button onclick="myFunction()">
+    <script src="./html2pdf.js"></script>
+    <button onclick="myFunction2()">
         download
     </button>
-</body>
-<script src="  https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script src="html2canvas.js"></script>
-<script>
+    <script>
+        function myFunction2() {
+            const input = document.getElementById('divIdToPrint');
 
-    function myFunction() {
-        const input = document.getElementById('divIdToPrint');
-        html2canvas(input)
-            .then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF('p', 'px', 'a5', {
-                    orientation: 'landscape',
+            var opt = {
+                //   margin:       1,
+                //   filename:     'myfile.pdf',
+                //   image:        { type: 'jpeg', quality: 0.98 },
+                //   html2canvas:  { scale: 2 },
+                html2canvas: { 
+                    //scale: 12, 
+                    width : pdf.internal.pageSize.getWidth(),
+                    height : (imgProps.height * pdfWidth) / imgProps.width,
+                },
+                jsPDF: {
+                    //unit: 'in', format: 'letter', orientation: 'portrait'
+                    format: 'a5',
+                    unit: 'in',
+                }
+            };
+            html2pdf().set(opt).from(input).save();
+
+        }
+
+    </script>
+
+
+
+    <!-- <script src="  https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="html2canvas.js"></script>
+    <script>
+
+        function myFunction() {
+            const input = document.getElementById('divIdToPrint');
+            html2canvas(input)
+                .then((canvas) => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF('p', 'px', 'a5', {
+                        orientation: 'landscape',
+                    });
+                    const imgProps = pdf.getImageProperties(imgData);
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+                    // var width = doc.internal.pageSize.getWidth();
+                    // var height = doc.internal.pageSize.getHeight();
+
+                    pdf.addImage(imgData, 'PNG', 0, -40, pdfWidth, pdfHeight);
+
+                    // pdf.addImage(imgData, 'PNG', -10, -185, pdfWidth, pdfHeight);
+                    // pdf.addImage(imgData, 'PNG', 0, 0, width, height);
+                    pdf.save("download.pdf");
                 });
-                const imgProps = pdf.getImageProperties(imgData);
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        }
 
-                // var width = doc.internal.pageSize.getWidth();
-                // var height = doc.internal.pageSize.getHeight();
+    </script> -->
 
-                pdf.addImage(imgData, 'PNG', 0, -40, pdfWidth, pdfHeight);
 
-                // pdf.addImage(imgData, 'PNG', -10, -185, pdfWidth, pdfHeight);
-                // pdf.addImage(imgData, 'PNG', 0, 0, width, height);
-                pdf.save("download.pdf");
-            });
-    }
-
-</script>
+</body>
 
 </html>
