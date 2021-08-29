@@ -12,38 +12,42 @@
         }
 
         #divIdToPrint {
-            font-size: 5px;
+            font-size: 14px;
             text-align: center;
         }
-    </style>
-    <style>
+
         table,
         th,
         td {
-            border: 0.2px solid black;
+            border: 1px solid black;
             /* border-radius: 10px; */
+        }
+
+        .marginLR10 {
+            margin-left: 10px;
+            margin-right: 10px;
         }
     </style>
 </head>
 
 <body>
     <div id="divIdToPrint" style="
-    border: 0.3px solid rgb(238, 46, 46);
+    border: 1.5px solid rgb(238, 46, 46);
     /* the right dimensions */
-    width: 147.83px;
+    /* width: calc(147.83*3.5px); */
     /* height: 196px; */
     
     ">
         <div style="
-        height: 1.5px;
+        height: calc(1.5px);
         background-color: rgb(77, 74, 228);
         "></div>
         <div style="
-        border: 1px solid  rgb(77, 74, 228);
-        border-bottom-right-radius: 5em 5em;
-border-bottom-left-radius:  5em 5em;
+        border: calc(1*4px) solid  rgb(77, 74, 228);
+        border-bottom-right-radius: 15em 15em;
+        border-bottom-left-radius:  15em 15em;
         ">
-            <h1 style="font-size: 12px;
+            <h1 style="font-size: calc(35px);
             font-family: titleFont ;
             text-align: center;
             ">
@@ -60,8 +64,8 @@ border-bottom-left-radius:  5em 5em;
                 و
                 المفروشات
             </h1>
-            <p style="font-size: 4px;
-            margin-top: -6px;
+            <p style="font-size: calc(4*4px);
+            margin-top: -10px;
             text-align: center;
             ">
                 الجهراء الصناعيه
@@ -76,30 +80,30 @@ border-bottom-left-radius:  5em 5em;
 
 
         </div>
-        <div style="display: flex;">
+        <div class="marginLR10" style="display: flex;">
             <p dir="rtl" style="
             /* position: relative; */
             text-align: right;
-            font-size: 5px;
+            font-size: 15px;
 
             ">
                 التاريخ : ...................ه
 
             </p>
             <div style="
-            margin-right: 20px;
-            margin-top: 2px;
-            height: 7px;
-            width: 20px;
+            margin-right: 80px;
+            margin-top: 8px;
+            height: 28px;
+            width: 80px;
             border-radius: 10px;
             border: 1px solid rgb(86, 86, 226) ;
             text-align: center;
             ">
                 <p style="
                 color: rgb(86, 86, 226);
-                margin-top: 2px;
+                margin-top: 6px;
                 /* text-align: center; */
-            font-size: 4px;
+            font-size: 16px;
             font-weight: 1000;
 
                 
@@ -109,25 +113,25 @@ border-bottom-left-radius:  5em 5em;
             </div>
 
         </div>
-        <div style="display: flex;margin-top: -02px;">
+        <div class="marginLR10" style="display: flex;margin-top: -02px;">
             <p dir="rtl" style="
             /* position: relative; */
             text-align: right;
-            font-size: 5px;
+            font-size: 16px;
 
             ">
                 السياد و السادة : ..........................ه
             </p>
-            <div style="width: 17px;
+            <div style="width: 78px;
             
             ">
 
             </div>
-            <img src="./mobile.png" height="10px" alt="mobile" />
+            <img src="./mobile.png" height="40px" alt="mobile" />
             <p dir="rtl" style="
             /* position: relative; */
             text-align: right;
-            font-size: 5px;
+            font-size: 16px;
 
             ">
                 موبايل : ...........................ه
@@ -135,11 +139,11 @@ border-bottom-left-radius:  5em 5em;
         </div>
 
 
-        <div>
+        <div class="marginLR10">
 
 
             <table style="width:100%;
-            font-size: 3px;
+            font-size: 12px;
                        border-collapse:collapse;
                        /* border-radius: 100em; */
                         overflow: hidden;        ">
@@ -167,7 +171,7 @@ border-bottom-left-radius:  5em 5em;
 
 
                 </tr>
-                <tr style="height: 10px;">
+                <tr style="height: 40px;">
                     <td colspan="5"></td>
                     <td></td>
                     <td></td>
@@ -180,55 +184,71 @@ border-bottom-left-radius:  5em 5em;
         </div>
 
 
-        <!-- <div style="height: 100px;">
+        <div style="height: 10px;">
 
-        </div> -->
-
-        <div>
+        </div>
+        <style>
+            .px10 {
+                height: 20px;
+            }
+        </style>
+        <div class="marginLR10">
             <table style="
             
             width:100%;
-            font-size: 3px;
-                       border-collapse:collapse;
-                       /* border-radius: 100em; */
+            font-size: 12px;
+                        border-collapse:collapse;
+                        /* border-radius: 100em;  */
                         overflow: hidden;        ">
-                <tr>
-                    <th>القيمة الاجمالية</th>
-                    <th>
-                        سعر الوحدة
-                    </th>
-                    <th>
-                        الكمية
-                    </th>
-                    <th>
-                        التفاصيل
-                    </th>
-                </tr>
-                <tr>
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            القيمة الاجمالية
+                            <br>
+                            Total Amount
+                        </th>
+                        <th>
+                            سعر الوحدة
+                        </th>
+                        <th>
+                            الكمية
+                        </th>
+                        <th>
+                            التفاصيل
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                </tbody>
+
+                <tr class="px10">
+
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="px10">
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="px10">
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="px10">
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="px10">
                     <td></td>
                     <td></td>
                     <td></td>
@@ -241,29 +261,118 @@ border-bottom-left-radius:  5em 5em;
 
 
         <div style="
-            /* margin-right: 20px; */
-            margin-top: 2px;
-            height: 17px;
-            width: 90%;
-            border-radius: 10px;
+            margin-right: 20px;
+            margin-top: 18px;
+            height: 68px;
+            width: 95%;
+            border-radius: 10rem 10rem;
             border: 1px solid rgb(86, 86, 226) ;
-            text-align: center;
+            
             ">
             <p style="
                 color: rgb(86, 86, 226);
                 margin-top: 2px;
-                /* text-align: center; */
-            font-size: 4px;
+                text-align: center;
+            font-size: 16px;
             font-weight: 1000;
                 ">
                 البضاعه المباعه لا ترد ولا تستبدل ما على السهو والخطا
 
             </p>
+
+            <div class="marginLR10" style="display: flex;margin-top: -02px;">
+                <p dir="rtl" style="
+                /* position: relative; */
+                text-align: center;
+                font-size: 16px;
+                ">
+                    المندوب : ..................ه
+                </p>
+                <div style="width: 38px;
+                
+                ">
+
+                </div>
+                <p dir="rtl" style="
+                /* position: relative; */
+                text-align: center;
+                font-size: 16px;
+                
+    
+                ">
+                    اسم المستلم : ..................ه
+                </p>
+                <div style="width: 28px;
+                
+                ">
+
+                </div>
+                <p dir="rtl" style="
+                /* position: relative; */
+                text-align: right;
+                font-size: 16px;
+    
+                ">
+                    توقيع المستلم : .................ه
+                </p>
+            </div>
+
+
+
         </div>
 
+        <div style="height: 20px;">
 
+        </div>
+
+        <div style="
+background-color:rgb(46, 46, 243)  ;
+        /* height: 68px; */
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid rgb(86, 86, 226) ;
+        border: calc(1*4px) solid  rgb(77, 74, 228);
+        border-top-right-radius: 15em 15em;
+        border-top-left-radius:  15em 15em;
+        ">
+            <h1>
+                تابع صفحتنا على الانستغرام والسناب ليصلك كل جديد
+            </h1>
+            <div style="display: flex;
+            text-align: center;
+            
+            margin-right: 210px;">
+                <div class="marginLR10" style="display: flex;
+                text-align: center;">
+                    <img src="./instagram.png" height="40px"/>
+                    <p>M3aqq</p>
+                </div>
+                <div class="marginLR10"   style="display: flex;
+                text-align: center;">
+                    <img src="./snapchat.png" height="40px"/>
+ 
+                    <p>M3aqq</p>
+                </div>
+                <div class="marginLR10"  style="display: flex;
+                text-align: center;">
+                    <img src="./whatsapp.png" height="40px"/>
+ 
+                    <p>M3aqq</p>
+                </div>
+
+            </div>
+        </div>
 
     </div>
+
+
+
+
+
+
+
+
+
     <script src="./html2pdf.js"></script>
     <button onclick="myFunction2()">
         download
@@ -277,11 +386,11 @@ border-bottom-left-radius:  5em 5em;
                 //   filename:     'myfile.pdf',
                 //   image:        { type: 'jpeg', quality: 0.98 },
                 //   html2canvas:  { scale: 2 },
-                html2canvas: { 
-                    //scale: 12, 
-                    width : pdf.internal.pageSize.getWidth(),
-                    height : (imgProps.height * pdfWidth) / imgProps.width,
-                },
+                // html2canvas: { 
+                //     //scale: 12, 
+                //     width : pdf.internal.pageSize.getWidth(),
+                //     height : (imgProps.height * pdfWidth) / imgProps.width,
+                // },
                 jsPDF: {
                     //unit: 'in', format: 'letter', orientation: 'portrait'
                     format: 'a5',
