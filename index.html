@@ -31,6 +31,8 @@
 </head>
 
 <body>
+
+    <input type="text" height="20px" placeholder="Enter the Area Name" id="AreaValue" value="Emptyyy" />
     <div id="divIdToPrint" style="
     border: 1.5px solid rgb(238, 46, 46);
     /* the right dimensions */
@@ -172,7 +174,7 @@
 
                 </tr>
                 <tr style="height: 40px;">
-                    <td colspan="5"></td>
+                    <td colspan="5" id="area"></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -378,9 +380,18 @@ background-color:rgb(46, 46, 243)  ;
         download
     </button>
     <script>
+        let area= document.getElementById('area').innerHTML("coucou");
         function myFunction2() {
-            const input = document.getElementById('divIdToPrint');
+            // const area= document.getElementById('area').innerHTML("coucou");
+            var message = document.getElementById("AreaValue");
+// document.getElementById("myButton").addEventListener("click", function() {
+//     console.log( message.value );
+// });
+            var x = document.getElementById("area");
 
+            x.innerHTML = message.value ;
+            const input = document.getElementById('divIdToPrint');
+            // const area= document.getElementById('area').innerHTML("coucou");
             var opt = {
                 //   margin:       1,
                 //   filename:     'myfile.pdf',
