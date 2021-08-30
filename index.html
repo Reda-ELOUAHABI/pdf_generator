@@ -5,7 +5,129 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF8">
     <title>Facture Pdf</title>
+    
+    <script src="./html2pdf.js"></script>
+    <script>
+        // let area= document.getElementById('area').innerHTML("coucou");
+        function myFunction2() {
+            // const area= document.getElementById('area').innerHTML("coucou");
+            var message = document.getElementById("AreaValue");
+            // document.getElementById("myButton").addEventListener("click", function() {
+            //     console.log( message.value );
+            // });
+            var x = document.getElementById("area");
+
+            x.innerHTML = message.value;
+            var CurrentDate = document.getElementById("CurrentDate");
+            var DateisChecked = document.getElementById("myCheckBox").checked;
+
+            if (DateisChecked) {
+                console.log("Input is checked");
+                1
+                2
+                3
+                4
+                var today = new Date();
+                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var dateTime = '&nbsp;' + date + ' &nbsp; &nbsp;' + time;
+                CurrentDate.innerHTML = dateTime;
+            } else {
+                console.log("Input is NOT checked");
+                CurrentDate.innerHTML = "................";
+            }
+            const input = document.getElementById('divIdToPrint');
+            // const area= document.getElementById('area').innerHTML("coucou");
+            var opt = {
+                //   margin:       1,
+                //   filename:     'myfile.pdf',
+                //   image:        { type: 'jpeg', quality: 0.98 },
+                //   html2canvas:  { scale: 2 },
+                // html2canvas: { 
+                //     //scale: 12, 
+                //     width : pdf.internal.pageSize.getWidth(),
+                //     height : (imgProps.height * pdfWidth) / imgProps.width,
+                // },
+                jsPDF: {
+                    //unit: 'in', format: 'letter', orientation: 'portrait'
+                    format: 'a5',
+                    unit: 'in',
+                }
+            };
+            html2pdf().set(opt).from(input).save();
+
+        }
+
+    </script>
+
+    <!-- Style for toggle btn -->
+
     <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+    <style>
+        td {
+            height: 15.5px;
+        }
+
         @font-face {
             font-family: titleFont;
             src: url(Lalezar-Regular.ttf);
@@ -28,20 +150,193 @@
             margin-right: 10px;
         }
     </style>
+    <!-- Input STyling -->
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        /* div {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        } */
+
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+        body {
+            margin: 0;
+            height: 100%;
+            background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .button_container {
+            /* position: absolute;
+            left: 0;
+            right: 0;
+            top: 30%; */
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        /* .description,
+        .link {
+            font-family: 'Amatic SC', cursive;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 35px;
+        } */
+
+        .btn {
+            border: none;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            outline: none;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            background-color: #222;
+            padding: 17px 60px;
+            margin: 0 auto;
+            
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 490%;
+            width: 140%;
+            background: #78c7d2;
+            -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+            -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+            transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        }
+
+        .btn:hover:after {
+            -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+            transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        }
+
+        .link {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        .link a {
+            color: #000;
+            font-size: 25px;
+        }
+    </style>
 </head>
 
 <body>
-    <br><br><br>
-<p> Enter Your Area Name</p>
-    <input type="text" height="20px" id="AreaValue" value="Morocco" />
-   
-   
-   
+    <div style="display: flex;
+padding-top: 50px;
+" dir="ltr">
+
+        <div style="width: 70px;"></div>
+        <div>
+            <h3>Use the Current Date : </h3>
+            <div style="width: 40px; 
+
+/* margin-top: 50px;
+padding-top: 50px; */
+"></div>
+            <label class="switch">
+                <input type="checkbox" id="myCheckBox" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div style="width: 70px;"></div>
+        <div>
+            <h3> Enter Your Area Name</h3>
+            <!-- <div style="width: 40px;"></div> -->
+
+            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+
+        </div>
+
+        <div style="width: 70px;"></div>
+        <!-- <button onclick="myFunction2()" style="  background-color: DodgerBlue;
+border: none;
+color: white;
+padding: 12px 30px;
+cursor: pointer;
+font-size: 20px;">
+            download
+        </button> -->
+
+        <div class="button_container">
+           
+             <button onclick="myFunction2()" class="btn"><span>
+                 Download Pdf !</span></button>
+        </div>
+
+    </div>
+
+
+    <!-- <button onclick="getValue()">Check value of above input</button>
+   -->
+    <!-- <script>
+        function getValue() {
+            var isChecked = document.getElementById("myCheckBox").checked;
+
+            if (isChecked) {
+                console.log("Input is checked");
+            } else {
+                console.log("Input is NOT checked");
+            }
+        }
+    </script> -->
+
+
+
     <br><br><br><br><br>
-   
-   
-   <div id="divIdToPrint" style="
-    border: 1.5px solid rgb(238, 46, 46);
+
+
+    <div id="divIdToPrint" style="
+    border: 1.5px solid rgb(77, 74, 228);
     /* the right dimensions */
     /* width: calc(147.83*3.5px); */
     /* height: 196px; */
@@ -96,7 +391,12 @@
             font-size: 15px;
 
             ">
-                التاريخ : ...................ه
+                التاريخ :
+                <span id="CurrentDate">
+                    ...................
+                </span>
+
+                ه
 
             </p>
             <div style="
@@ -193,7 +493,7 @@
         </div>
 
 
-        <div style="height: 10px;">
+        <div style="height: 20px;">
 
         </div>
         <style>
@@ -202,7 +502,137 @@
             }
         </style>
         <div class="marginLR10">
-            <table style="
+            <table dir="ltr" style="
+            
+            width:100%;
+            
+            font-size: 12px;
+                        border-collapse:collapse;
+                        /* border-radius: 100em;  */
+                        overflow: hidden;        ">
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="width: 32.9086%;">
+                            التفاصيل
+                            <br>
+                            Description
+                        </td>
+                        <td rowspan="2" style="width: 11.7372%;">
+                            الكمية
+                            <br>
+                            QTY
+                        </td>
+                        <td colspan="2" style="width: 26.5642%;">
+                            سعر الوحدة
+                            <br>Unit Price
+                        </td>
+                        <td colspan="2" style="width: 28.5149%;"> القيمة الاجمالية
+                            <br> Total Amount
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 13.2199%;">
+                            دينار
+                            <br>
+                            K.D
+                        </td>
+                        <td style="width: 13.3157%;">
+                            فلس
+                            <br>
+                            Fils
+                        </td>
+                        <td style="width: 15.1705%;">
+                            دينار
+                            <br>
+                            K.D
+                        </td>
+                        <td style="width: 13.3927%;">
+                            فلس
+                            <br>
+                            Fils
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;"><br></td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;"><br></td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;"><br></td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;"><br></td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;"><br></td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;"><br></td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;"><br></td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32.9086%;
+                        text-align: right;
+                        ">التوصبل &nbsp; د.ك</td>
+                        <td style="width: 11.7372%;"><br></td>
+                        <td style="width: 13.2199%;"><br></td>
+                        <td style="width: 13.3157%;"><br></td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="width: 71.1697%;" dir="rtl">
+
+
+                            المجموع د.ك
+                            <span>....................................................................</span>
+                            Total K.d
+                        </td>
+                        <td style="width: 15.1705%;"><br></td>
+                        <td style="width: 13.3927%;"><br></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- <table style="
             
             width:100%;
             font-size: 12px;
@@ -266,6 +696,8 @@
                 </tr>
 
             </table>
+         -->
+
         </div>
 
 
@@ -289,7 +721,8 @@
 
             </p>
 
-            <div class="marginLR10" style="display: flex;margin-top: -02px;">
+            <div class="marginLR10" style="
+            display: flex;margin-top: -20px;">
                 <p dir="rtl" style="
                 /* position: relative; */
                 text-align: center;
@@ -335,6 +768,7 @@
         </div>
 
         <div style="
+        color: white;
 background-color:rgb(46, 46, 243)  ;
         /* height: 68px; */
         width: 100%;
@@ -349,23 +783,23 @@ background-color:rgb(46, 46, 243)  ;
             </h1>
             <div style="display: flex;
             text-align: center;
-            
-            margin-right: 210px;">
+            /* margin-left: 210px ; */
+            margin-right: 130px;">
                 <div class="marginLR10" style="display: flex;
                 text-align: center;">
-                    <img src="./instagram.png" height="40px"/>
+                    <img src="./instagram.png" height="40px" />
                     <p>M3aqq</p>
                 </div>
-                <div class="marginLR10"   style="display: flex;
+                <div class="marginLR10" style="display: flex;
                 text-align: center;">
-                    <img src="./snapchat.png" height="40px"/>
- 
+                    <img src="./snapchat.png" height="40px" />
+
                     <p>M3aqq</p>
                 </div>
-                <div class="marginLR10"  style="display: flex;
+                <div class="marginLR10" style="display: flex;
                 text-align: center;">
-                    <img src="./whatsapp.png" height="40px"/>
- 
+                    <img src="./whatsapp.png" height="40px" />
+
                     <p>M3aqq</p>
                 </div>
 
@@ -382,29 +816,40 @@ background-color:rgb(46, 46, 243)  ;
 
 
 
-    <script src="./html2pdf.js"></script>
+   
     <br><br><br><br>
-    <button onclick="myFunction2()" 
-    style="  background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 20px;"
-    >
-        download
-    </button>
+
+
+ <script src="./html2pdf.js"></script>
     <script>
-        let area= document.getElementById('area').innerHTML("coucou");
+        // let area= document.getElementById('area').innerHTML("coucou");
         function myFunction2() {
             // const area= document.getElementById('area').innerHTML("coucou");
             var message = document.getElementById("AreaValue");
-// document.getElementById("myButton").addEventListener("click", function() {
-//     console.log( message.value );
-// });
+            // document.getElementById("myButton").addEventListener("click", function() {
+            //     console.log( message.value );
+            // });
             var x = document.getElementById("area");
 
-            x.innerHTML = message.value ;
+            x.innerHTML = message.value;
+            var CurrentDate = document.getElementById("CurrentDate");
+            var DateisChecked = document.getElementById("myCheckBox").checked;
+
+            if (DateisChecked) {
+                console.log("Input is checked");
+                1
+                2
+                3
+                4
+                var today = new Date();
+                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var dateTime = '&nbsp;' + date + ' &nbsp; &nbsp;' + time;
+                CurrentDate.innerHTML = dateTime;
+            } else {
+                console.log("Input is NOT checked");
+                CurrentDate.innerHTML = "................";
+            }
             const input = document.getElementById('divIdToPrint');
             // const area= document.getElementById('area').innerHTML("coucou");
             var opt = {
