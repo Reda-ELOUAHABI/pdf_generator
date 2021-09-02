@@ -1,3 +1,4 @@
+
 // let area= document.getElementById('area').innerHTML("coucou");
 function myFunction2() {
 
