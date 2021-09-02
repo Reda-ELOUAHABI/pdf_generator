@@ -5,133 +5,16 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF8">
     <title>Facture Pdf</title>
+    <link rel="icon" href="./facture.jpg">
 
- 
+
     <!-- Style for toggle btn -->
-<link href="./Style.css" rel="stylesheet" />
+    <link href="./Style.css" rel="stylesheet" />
 
 </head>
 
 <body>
-    <script>
-        // let area= document.getElementById('area').innerHTML("coucou");
-        function myFunction2() {
-           
-
-            // MrMme 
-            var MrMme = document.getElementById("MrMme");
-            var MrMmeCell = document.getElementById("MrMmeCell");
-            MrMmeCell.innerHTML = ' &nbsp;' +  MrMme.value + '&nbsp;';
-            
-             // Mobile 
-             var Mobile = document.getElementById("Mobile");
-            var mobileCell = document.getElementById("mobileCell");
-            mobileCell.innerHTML = '&nbsp; &nbsp;' +  Mobile.value + '&nbsp;';
-            
-             // Area
-             var AreaValue = document.getElementById("AreaValue");
-            var area = document.getElementById("area");
-            area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
-
-            // Section 
-            var Section = document.getElementById("Section");
-            var SectionCell = document.getElementById("SectionCell");
-            SectionCell.innerHTML = ' &nbsp;' +  Section.value + '&nbsp;';
-            
-
-            // Rue 
-            var Rue = document.getElementById("Rue");
-            var RueCell = document.getElementById("RueCell");
-            RueCell.innerHTML = ' &nbsp;' +  Rue.value + '&nbsp;';
-            
-
-            // Jada 
-            var Jada = document.getElementById("Jada");
-            var JadaCell = document.getElementById("JadaCell");
-            JadaCell.innerHTML = ' &nbsp;' +  Jada.value + '&nbsp;';
-            
-            // Home 
-            var Home = document.getElementById("Home");
-            var HomeCell = document.getElementById("HomeCell");
-            HomeCell.innerHTML = ' &nbsp;' +  Home.value + '&nbsp;';
-            
-            // Dor 
-            var Dor = document.getElementById("Dor");
-            var DorCell = document.getElementById("DorCell");
-            DorCell.innerHTML = ' &nbsp;' +  Dor.value + '&nbsp;';
-            
-            // Appartement 
-            var Appartement = document.getElementById("Appartement");
-            var AppartementCell = document.getElementById("AppartementCell");
-            AppartementCell.innerHTML = ' &nbsp;' +  Appartement.value + '&nbsp;';
-            
-            // Transport 
-            var Transport = document.getElementById("Transport");
-            var transportCell = document.getElementById("transportCell");
-            transportCell.innerHTML = ' &nbsp;' +  Transport.value + '&nbsp;';
-            
-
-            // Total 
-            var Total = document.getElementById("Total");
-            var TotalCell = document.getElementById("TotalCell");
-            TotalCell.innerHTML = ' &nbsp;' +  Total.value + '&nbsp;';
-            
-
-             // Mandoub 
-             var Mandoub = document.getElementById("Mandoub");
-            var MandoubCell = document.getElementById("MandoubCell");
-            MandoubCell.innerHTML = '&nbsp; &nbsp;' +  Mandoub.value + '&nbsp;';
-            
-
-             // Recepteur 
-             var Recepteur = document.getElementById("Recepteur");
-            var RecepteurCell = document.getElementById("RecepteurCell");
-            RecepteurCell.innerHTML = '&nbsp; &nbsp;' +  Recepteur.value + '&nbsp;';
-            
-
-          
-
-
-
-            var CurrentDate = document.getElementById("CurrentDate");
-            var DateisChecked = document.getElementById("myCheckBox").checked;
-
-            if (DateisChecked) {
-                console.log("Input is checked");
-                1
-                2
-                3
-                4
-                var today = new Date();
-                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                var dateTime = '  &nbsp;' + date + ' &nbsp; &nbsp;' + time;
-                CurrentDate.innerHTML = dateTime;
-            } else {
-                console.log("Input is NOT checked");
-                CurrentDate.innerHTML = "................";
-            }
-            const input = document.getElementById('divIdToPrint');
-            // const area= document.getElementById('area').innerHTML("coucou");
-            var opt = {
-                //   margin:       1,
-                //   filename:     'myfile.pdf',
-                //   image:        { type: 'jpeg', quality: 0.98 },
-                //   html2canvas:  { scale: 2 },
-                // html2canvas: { 
-                //     //scale: 12, 
-                //     width : pdf.internal.pageSize.getWidth(),
-                //     height : (imgProps.height * pdfWidth) / imgProps.width,
-                // },
-                jsPDF: {
-                    //unit: 'in', format: 'letter', orientation: 'portrait'
-                    format: 'a5',
-                    unit: 'in',
-                }
-            };
-            html2pdf().set(opt).from(input).save();
-
-        }
+    <script src="./script.js">
 
     </script>
 
@@ -159,7 +42,7 @@ padding-top: 50px; */
             <h3>
                 السياد و السادة
             </h3>
-            <input type="text" height="20px" dir="rtl" id="MrMme"   value=" &nbsp; ................." />
+            <input type="text" height="20px" dir="rtl" id="MrMme" value=" &nbsp; ................." />
 
         </div>
         <div style="width: 40px;"></div>
@@ -167,7 +50,7 @@ padding-top: 50px; */
             <h3>
                 موبايل
             </h3>
-            <input type="text" height="20px" id="Mobile"  value=" &nbsp; ................."  />
+            <input type="text" height="20px" id="Mobile" value=" &nbsp; ................." />
 
         </div>
         <div style="width: 40px;"></div>
@@ -233,6 +116,341 @@ padding-top: 50px;
             <input type="text" height="20px" id="Appartement" value=" &nbsp; ................" />
         </div>
     </div>
+
+    <!-- Row 1 Tabale -->
+<h4 style="text-align: center;">
+    Row 1 
+</h4>
+    <div style="display: flex;
+    padding-top: 50px;
+    " dir="rtl">
+        <div style="width: 70px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="TotalAmountFilsIn1" placeholder="TotalAmountFils" />
+            <input type="hidden" id="TotalAmountFilsIn1" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn1" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn1" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="UnitPriceFilsIn1" placeholder="UnitPriceFilsIn1" />
+            <input type="hidden" id="UnitPriceFilsIn1" value=" &nbsp; ................" />
+            <input type="text" id="UnitPriceKDIn1" placeholder="UnitPriceKD" />
+            <input type="hidden" id="UnitPriceKDIn1" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="
+            margin-top: 30px;
+            ">
+            <input type="text" id="QTYIn1" placeholder="
+                الكمية" />
+            <input type="hidden" id="QTYIn1" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div dir="rtl" style="
+            width: 390px;
+            ">
+            <input style="
+                width: 490px;
+                height: 100px;
+                " type="text" id="detailsIn1" placeholder="
+                
+                التفاصيل
+                " />
+            <input type="hidden" id="detailsIn1" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+    </div>
+
+    <!-- Row 2 Table -->
+
+    <h4 style="text-align: center;">
+        Row 2
+    </h4>
+
+    <div style="display: flex;
+padding-top: 50px;
+" dir="rtl">
+        <div style="width: 70px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="TotalAmountFilsIn2" placeholder="TotalAmountFils2" />
+            <input type="hidden" id="TotalAmountFilsIn2" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn2" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn2" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="UnitPriceFilsIn2" placeholder="UnitPriceFilsIn2" />
+            <input type="hidden" id="UnitPriceFilsIn2" value=" &nbsp; ................" />
+            <input type="text" id="UnitPriceKDIn2" placeholder="UnitPriceKD" />
+            <input type="hidden" id="UnitPriceKDIn2" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="
+        margin-top: 30px;
+        ">
+            <input type="text" id="QTYIn2" placeholder="
+            الكمية" />
+            <input type="hidden" id="QTYIn2" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div dir="rtl" style="
+        width: 390px;
+        ">
+            <input style="
+            width: 490px;
+            height: 100px;
+            " type="text" id="detailsIn2" placeholder="
+            
+            التفاصيل
+            " />
+            <input type="hidden" id="detailsIn2" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+    </div>
+
+     <!-- Row 3 Table -->
+
+     <h4 style="text-align: center;">
+        Row 3
+    </h4>
+
+    <div style="display: flex;
+padding-top: 50px;
+" dir="rtl">
+        <div style="width: 70px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="TotalAmountFilsIn3" placeholder="TotalAmountFils3" />
+            <input type="hidden" id="TotalAmountFilsIn3" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn3" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn3" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="UnitPriceFilsIn3" placeholder="UnitPriceFilsIn3" />
+            <input type="hidden" id="UnitPriceFilsIn3" value=" &nbsp; ................" />
+            <input type="text" id="UnitPriceKDIn3" placeholder="UnitPriceKD" />
+            <input type="hidden" id="UnitPriceKDIn3" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="
+        margin-top: 30px;
+        ">
+            <input type="text" id="QTYIn3" placeholder="
+            الكمية" />
+            <input type="hidden" id="QTYIn3" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div dir="rtl" style="
+        width: 390px;
+        ">
+            <input style="
+            width: 490px;
+            height: 100px;
+            " type="text" id="detailsIn3" placeholder="
+            
+            التفاصيل
+            " />
+            <input type="hidden" id="detailsIn3" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+    </div>
+
+     <!-- Row 4 Table -->
+
+     <h4 style="text-align: center;">
+        Row 4
+    </h4>
+
+    <div style="display: flex;
+padding-top: 50px;
+" dir="rtl">
+        <div style="width: 70px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="TotalAmountFilsIn4" placeholder="TotalAmountFils4" />
+            <input type="hidden" id="TotalAmountFilsIn4" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn4" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn4" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="UnitPriceFilsIn4" placeholder="UnitPriceFilsIn4" />
+            <input type="hidden" id="UnitPriceFilsIn4" value=" &nbsp; ................" />
+            <input type="text" id="UnitPriceKDIn4" placeholder="UnitPriceKD" />
+            <input type="hidden" id="UnitPriceKDIn4" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="
+        margin-top: 30px;
+        ">
+            <input type="text" id="QTYIn4" placeholder="
+            الكمية" />
+            <input type="hidden" id="QTYIn4" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div dir="rtl" style="
+        width: 390px;
+        ">
+            <input style="
+            width: 490px;
+            height: 100px;
+            " type="text" id="detailsIn4" placeholder="
+            
+            التفاصيل
+            " />
+            <input type="hidden" id="detailsIn4" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+    </div>
+
+    <!-- Row 5 Table -->
+
+    <h4 style="text-align: center;">
+        Row 5
+    </h4>
+
+    <div style="display: flex;
+padding-top: 50px;
+" dir="rtl">
+        <div style="width: 70px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="TotalAmountFilsIn5" placeholder="TotalAmountFils5" />
+            <input type="hidden" id="TotalAmountFilsIn5" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn5" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn5" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="UnitPriceFilsIn5" placeholder="UnitPriceFilsIn5" />
+            <input type="hidden" id="UnitPriceFilsIn5" value=" &nbsp; ................" />
+            <input type="text" id="UnitPriceKDIn5" placeholder="UnitPriceKD" />
+            <input type="hidden" id="UnitPriceKDIn5" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="
+        margin-top: 30px;
+        ">
+            <input type="text" id="QTYIn5" placeholder="
+            الكمية" />
+            <input type="hidden" id="QTYIn5" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div dir="rtl" style="
+        width: 390px;
+        ">
+            <input style="
+            width: 490px;
+            height: 100px;
+            " type="text" id="detailsIn5" placeholder="
+            
+            التفاصيل
+            " />
+            <input type="hidden" id="detailsIn5" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+    </div>
+
+        <!-- Row 6 Table -->
+
+        <h4 style="text-align: center;">
+            Row 6
+        </h4>
+    
+        <div style="display: flex;
+    padding-top: 50px;
+    " dir="rtl">
+            <div style="width: 70px;"></div>
+            <div style="width: 190px;">
+                <input type="text" id="TotalAmountFilsIn6" placeholder="TotalAmountFils6" />
+                <input type="hidden" id="TotalAmountFilsIn6" value=" &nbsp; ................" />
+                <input type="text" id="TotalAmountKDIn6" placeholder="TotalAmountKD" />
+                <input type="hidden" id="TotalAmountKDIn6" value=" &nbsp; ................" />
+            </div>
+            <div style="width: 40px;"></div>
+            <div style="width: 190px;">
+                <input type="text" id="UnitPriceFilsIn6" placeholder="UnitPriceFilsIn6" />
+                <input type="hidden" id="UnitPriceFilsIn6" value=" &nbsp; ................" />
+                <input type="text" id="UnitPriceKDIn6" placeholder="UnitPriceKD" />
+                <input type="hidden" id="UnitPriceKDIn6" value=" &nbsp; ................" />
+            </div>
+            <div style="width: 40px;"></div>
+            <div style="
+            margin-top: 30px;
+            ">
+                <input type="text" id="QTYIn6" placeholder="
+                الكمية" />
+                <input type="hidden" id="QTYIn6" value=" &nbsp; ................" />
+            </div>
+            <div style="width: 40px;"></div>
+            <div dir="rtl" style="
+            width: 390px;
+            ">
+                <input style="
+                width: 490px;
+                height: 100px;
+                " type="text" id="detailsIn6" placeholder="
+                
+                التفاصيل
+                " />
+                <input type="hidden" id="detailsIn6" value=" &nbsp; ................" />
+            </div>
+            <div style="width: 40px;"></div>
+        </div>
+
+    <!-- Row 7 Table -->
+
+    <h4 style="text-align: center;">
+        Row 7
+    </h4>
+
+    <div style="display: flex;
+padding-top: 50px;
+" dir="rtl">
+        <div style="width: 70px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="TotalAmountFilsIn7" placeholder="TotalAmountFils7" />
+            <input type="hidden" id="TotalAmountFilsIn7" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn7" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn7" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="width: 190px;">
+            <input type="text" id="UnitPriceFilsIn7" placeholder="UnitPriceFilsIn7" />
+            <input type="hidden" id="UnitPriceFilsIn7" value=" &nbsp; ................" />
+            <input type="text" id="UnitPriceKDIn7" placeholder="UnitPriceKD" />
+            <input type="hidden" id="UnitPriceKDIn7" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div style="
+        margin-top: 30px;
+        ">
+            <input type="text" id="QTYIn7" placeholder="
+            الكمية" />
+            <input type="hidden" id="QTYIn7" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+        <div dir="rtl" style="
+        width: 390px;
+        ">
+            <input style="
+            width: 490px;
+            height: 100px;
+            " type="text" id="detailsIn7" placeholder="
+            
+            التفاصيل
+            " />
+            <input type="hidden" id="detailsIn7" value=" &nbsp; ................" />
+        </div>
+        <div style="width: 40px;"></div>
+    </div>
+
+
+
+
+
+
+
+
     <div style="display: flex;
 padding-top: 50px;
 " dir="rtl">
@@ -269,7 +487,7 @@ padding-top: 50px;
         </div>
 
         <div style="width: 40px;"></div>
-        
+
         <div class="button_container">
 
             <button onclick="myFunction2()" class="btn"><span>
@@ -344,10 +562,10 @@ padding-top: 50px;
             font-size: 15px;
 
             "> التاريخ
-            &nbsp;
-               <span id="CurrentDate"> 
-                     :
-               
+                &nbsp;
+                <span id="CurrentDate">
+                    :
+
                     ...................
                 </span>
 
@@ -382,12 +600,12 @@ padding-top: 50px;
             font-size: 16px;
 
             ">
-                السياد  و السادة 
+                السياد و السادة
                 &nbsp;
-          
-                 
+
+
                 <span id="MrMmeCell">
-                  :  &nbsp; ...............
+                    : &nbsp; ...............
                 </span>
 
             </p>
@@ -403,12 +621,12 @@ padding-top: 50px;
             font-size: 16px;
 
             ">
-                موبايل 
+                موبايل
                 &nbsp;
                 <span id="mobileCell">
 
                     : ...........................
-           
+
                 </span>
             </p>
         </div>
@@ -423,7 +641,7 @@ padding-top: 50px;
                        /* border-radius: 100em; */
                         overflow: hidden;        ">
                 <tr>
-                    <th >المنطقة</th>
+                    <th>المنطقة</th>
                     <th>
                         قطعة
                     </th>
@@ -447,7 +665,7 @@ padding-top: 50px;
 
                 </tr>
                 <tr style="height: 40px;">
-                    <td  id="area"></td>
+                    <td id="area"></td>
                     <td id="SectionCell"></td>
                     <td id="RueCell"></td>
                     <td id="JadaCell"></td>
@@ -519,76 +737,287 @@ padding-top: 50px;
                             Fils
                         </td>
                     </tr>
+                    <!-- Row 1 -->
                     <tr>
-                        <td style="width: 32.9086%;"><br></td>
-                        <td style="width: 11.7372%;"><br></td>
-                        <td style="width: 13.2199%;"><br></td>
-                        <td style="width: 13.3157%;"><br></td>
-                        <td style="width: 15.1705%;"><br></td>
-                        <td style="width: 13.3927%;"><br></td>
+                        <td style="width: 32.9086%;">
+                            <span id="details1">
+                                ..................
+                            </span><br>
+                        </td>
+                        <td style="width: 11.7372%;">
+                            <span id="qty1">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.2199%;">
+                            <span id="UPKD1">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3157%;">
+                            <span id="UPFils1">
+                                ...............
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 15.1705%;">
+                            <span id="TAKD1">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3927%;">
+                            <span id="TAFils1">
+                                ..................
+                            </span><br>
+                        </td>
                     </tr>
+
+                    <!-- Row 2 -->
                     <tr>
-                        <td style="width: 32.9086%;"><br></td>
-                        <td style="width: 11.7372%;"><br></td>
-                        <td style="width: 13.2199%;"><br></td>
-                        <td style="width: 13.3157%;"><br></td>
-                        <td style="width: 15.1705%;"><br></td>
-                        <td style="width: 13.3927%;"><br></td>
+                        <td style="width: 32.9086%;">
+                            <span id="details2">
+                                ..................
+                            </span><br>
+                        </td>
+                        <td style="width: 11.7372%;">
+                            <span id="qty2">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.2199%;">
+                            <span id="UPKD2">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3157%;">
+                            <span id="UPFils2">
+                                ...............
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 15.1705%;">
+                            <span id="TAKD2">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3927%;">
+                            <span id="TAFils2">
+                                ..................
+                            </span><br>
+                        </td>
                     </tr>
+
+
+                    <!-- Row 3 -->
                     <tr>
-                        <td style="width: 32.9086%;"><br></td>
-                        <td style="width: 11.7372%;"><br></td>
-                        <td style="width: 13.2199%;"><br></td>
-                        <td style="width: 13.3157%;"><br></td>
-                        <td style="width: 15.1705%;"><br></td>
-                        <td style="width: 13.3927%;"><br></td>
+                        <td style="width: 32.9086%;">
+                            <span id="details3">
+                                ..................
+                            </span><br>
+                        </td>
+                        <td style="width: 11.7372%;">
+                            <span id="qty3">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.2199%;">
+                            <span id="UPKD3">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3157%;">
+                            <span id="UPFils3">
+                                ...............
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 15.1705%;">
+                            <span id="TAKD3">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3927%;">
+                            <span id="TAFils3">
+                                ..................
+                            </span><br>
+                        </td>
                     </tr>
+
+                      <!-- Row 4 -->
+                      <tr>
+                        <td style="width: 32.9086%;">
+                            <span id="details4">
+                                ..................
+                            </span><br>
+                        </td>
+                        <td style="width: 11.7372%;">
+                            <span id="qty4">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.2199%;">
+                            <span id="UPKD4">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3157%;">
+                            <span id="UPFils4">
+                                ...............
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 15.1705%;">
+                            <span id="TAKD4">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3927%;">
+                            <span id="TAFils4">
+                                ..................
+                            </span><br>
+                        </td>
+                    </tr>
+
+                     <!-- Row 5 -->
+                     <tr>
+                        <td style="width: 32.9086%;">
+                            <span id="details5">
+                                ..................
+                            </span><br>
+                        </td>
+                        <td style="width: 11.7372%;">
+                            <span id="qty5">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.5199%;">
+                            <span id="UPKD5">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3157%;">
+                            <span id="UPFils5">
+                                ...............
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 15.1705%;">
+                            <span id="TAKD5">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3927%;">
+                            <span id="TAFils5">
+                                ..................
+                            </span><br>
+                        </td>
+                    </tr>
+
+                  <!-- Row 6 -->
+                  <tr>
+                    <td style="width: 32.9086%;">
+                        <span id="details6">
+                            ..................
+                        </span><br>
+                    </td>
+                    <td style="width: 11.7372%;">
+                        <span id="qty6">
+                            ..................
+                        </span>
+                        <br>
+                    </td>
+                    <td style="width: 13.5199%;">
+                        <span id="UPKD6">
+                            ..................
+                        </span>
+                        <br>
+                    </td>
+                    <td style="width: 13.3157%;">
+                        <span id="UPFils6">
+                            ...............
+                        </span>
+                        <br>
+                    </td>
+                    <td style="width: 15.1705%;">
+                        <span id="TAKD6">
+                            ..................
+                        </span>
+                        <br>
+                    </td>
+                    <td style="width: 13.3927%;">
+                        <span id="TAFils6">
+                            ..................
+                        </span><br>
+                    </td>
+                </tr>
+
+                    <!-- Row 7 -->
                     <tr>
-                        <td style="width: 32.9086%;"><br></td>
-                        <td style="width: 11.7372%;"><br></td>
-                        <td style="width: 13.2199%;"><br></td>
-                        <td style="width: 13.3157%;"><br></td>
-                        <td style="width: 15.1705%;"><br></td>
-                        <td style="width: 13.3927%;"><br></td>
+                        <td style="width: 32.9086%;">
+                            <span id="details7">
+                                ..................
+                            </span><br>
+                        </td>
+                        <td style="width: 11.7372%;">
+                            <span id="qty7">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.5199%;">
+                            <span id="UPKD7">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3157%;">
+                            <span id="UPFils7">
+                                ...............
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 15.1705%;">
+                            <span id="TAKD7">
+                                ..................
+                            </span>
+                            <br>
+                        </td>
+                        <td style="width: 13.3927%;">
+                            <span id="TAFils7">
+                                ..................
+                            </span><br>
+                        </td>
                     </tr>
-                    <tr>
-                        <td style="width: 32.9086%;"><br></td>
-                        <td style="width: 11.7372%;"><br></td>
-                        <td style="width: 13.2199%;"><br></td>
-                        <td style="width: 13.3157%;"><br></td>
-                        <td style="width: 15.1705%;"><br></td>
-                        <td style="width: 13.3927%;"><br></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 32.9086%;"><br></td>
-                        <td style="width: 11.7372%;"><br></td>
-                        <td style="width: 13.2199%;"><br></td>
-                        <td style="width: 13.3157%;"><br></td>
-                        <td style="width: 15.1705%;"><br></td>
-                        <td style="width: 13.3927%;"><br></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 32.9086%;"><br></td>
-                        <td style="width: 11.7372%;"><br></td>
-                        <td style="width: 13.2199%;"><br></td>
-                        <td style="width: 13.3157%;"><br></td>
-                        <td style="width: 15.1705%;"><br></td>
-                        <td style="width: 13.3927%;"><br></td>
-                    </tr>
+
                     <tr>
                         <td style="width: 32.9086%;
                         text-align: right;
                         direction: rtl;
                         ">
-                    التوصبل &nbsp;
-                <span id="transportCell">
-                    ..................
-                </span>
-                <span style="text-align: left;">
-                    
-                    د.ك
-                </span>
-                </td>
+                            التوصبل &nbsp;
+                            <span id="transportCell">
+                                ..................
+                            </span>
+                            <span style="text-align: left;">
+
+                                د.ك
+                            </span>
+                        </td>
                         <td style="width: 11.7372%;"><br></td>
                         <td style="width: 13.2199%;"><br></td>
                         <td style="width: 13.3157%;"><br></td>
@@ -598,13 +1027,14 @@ padding-top: 50px;
                     <tr>
                         <td colspan="4" style="width: 71.1697%;" dir="rtl">
 
-<span style="text-align: right;">
-    
-                            المجموع د.ك
-</span>
-                            <span id="TotalCell" style="text-align: center;">....................................................................</span>
+                            <span style="text-align: right;">
+
+                                المجموع د.ك
+                            </span>
+                            <span id="TotalCell"
+                                style="text-align: center;">....................................................................</span>
                             <span style="text-align: left;">
-                            Total K.d
+                                Total K.d
                             </span>
                         </td>
                         <td style="width: 15.1705%;"><br></td>
@@ -613,7 +1043,7 @@ padding-top: 50px;
                 </tbody>
             </table>
 
-      
+
         </div>
 
 
@@ -644,11 +1074,11 @@ padding-top: 50px;
                 text-align: center;
                 font-size: 16px;
                 ">
-                    المندوب 
-                    <span id="MandoubCell" >
-                       : .................. 
+                    المندوب
+                    <span id="MandoubCell">
+                        : ..................
                     </span>
-                    
+
                 </p>
                 <div style="width: 38px;
                 
@@ -662,11 +1092,11 @@ padding-top: 50px;
                 
     
                 ">
-                    اسم المستلم 
-                    <span id="RecepteurCell" >
-                        : .................. 
-                     </span>
-                     
+                    اسم المستلم
+                    <span id="RecepteurCell">
+                        : ..................
+                    </span>
+
                 </p>
                 <div style="width: 28px;
                 
@@ -679,12 +1109,12 @@ padding-top: 50px;
                 font-size: 16px;
     
                 ">
-                &nbsp;
-                    توقيع  
                     &nbsp;
-                    المستلم 
+                    توقيع
                     &nbsp;
-                                    </p>
+                    المستلم
+                    &nbsp;
+                </p>
             </div>
 
 
@@ -749,7 +1179,7 @@ background-color:rgb(46, 46, 243)  ;
 
 
     <script src="./html2pdf.js"></script>
-  
+
 
 
     <!-- <script src="  https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
@@ -781,7 +1211,7 @@ background-color:rgb(46, 46, 243)  ;
 
     </script> -->
 
-    <img src="./facture.jpg" alt="FactureImage" />
+    <!-- <img src="./facture.jpg" alt="FactureImage" /> -->
 </body>
 
 </html>
