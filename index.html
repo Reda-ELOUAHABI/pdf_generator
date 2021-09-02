@@ -16,14 +16,80 @@
     <script>
         // let area= document.getElementById('area').innerHTML("coucou");
         function myFunction2() {
-            // Area
-            var message = document.getElementById("AreaValue");
-            var x = document.getElementById("area");
-            x.innerHTML = message.value;
+           
 
             // MrMme 
             var MrMme = document.getElementById("MrMme");
+            var MrMmeCell = document.getElementById("MrMmeCell");
+            MrMmeCell.innerHTML = ' &nbsp;' +  MrMme.value + '&nbsp;';
             
+             // Mobile 
+             var Mobile = document.getElementById("Mobile");
+            var mobileCell = document.getElementById("mobileCell");
+            mobileCell.innerHTML = '&nbsp; &nbsp;' +  Mobile.value + '&nbsp;';
+            
+             // Area
+             var AreaValue = document.getElementById("AreaValue");
+            var area = document.getElementById("area");
+            area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
+
+            // Section 
+            var Section = document.getElementById("Section");
+            var SectionCell = document.getElementById("SectionCell");
+            SectionCell.innerHTML = ' &nbsp;' +  Section.value + '&nbsp;';
+            
+
+            // Rue 
+            var Rue = document.getElementById("Rue");
+            var RueCell = document.getElementById("RueCell");
+            RueCell.innerHTML = ' &nbsp;' +  Rue.value + '&nbsp;';
+            
+
+            // Jada 
+            var Jada = document.getElementById("Jada");
+            var JadaCell = document.getElementById("JadaCell");
+            JadaCell.innerHTML = ' &nbsp;' +  Jada.value + '&nbsp;';
+            
+            // Home 
+            var Home = document.getElementById("Home");
+            var HomeCell = document.getElementById("HomeCell");
+            HomeCell.innerHTML = ' &nbsp;' +  Home.value + '&nbsp;';
+            
+            // Dor 
+            var Dor = document.getElementById("Dor");
+            var DorCell = document.getElementById("DorCell");
+            DorCell.innerHTML = ' &nbsp;' +  Dor.value + '&nbsp;';
+            
+            // Appartement 
+            var Appartement = document.getElementById("Appartement");
+            var AppartementCell = document.getElementById("AppartementCell");
+            AppartementCell.innerHTML = ' &nbsp;' +  Appartement.value + '&nbsp;';
+            
+            // Transport 
+            var Transport = document.getElementById("Transport");
+            var transportCell = document.getElementById("transportCell");
+            transportCell.innerHTML = ' &nbsp;' +  Transport.value + '&nbsp;';
+            
+
+            // Total 
+            var Total = document.getElementById("Total");
+            var TotalCell = document.getElementById("TotalCell");
+            TotalCell.innerHTML = ' &nbsp;' +  Total.value + '&nbsp;';
+            
+
+             // Mandoub 
+             var Mandoub = document.getElementById("Mandoub");
+            var MandoubCell = document.getElementById("MandoubCell");
+            MandoubCell.innerHTML = '&nbsp; &nbsp;' +  Mandoub.value + '&nbsp;';
+            
+
+             // Recepteur 
+             var Recepteur = document.getElementById("Recepteur");
+            var RecepteurCell = document.getElementById("RecepteurCell");
+            RecepteurCell.innerHTML = '&nbsp; &nbsp;' +  Recepteur.value + '&nbsp;';
+            
+
+          
 
 
 
@@ -39,7 +105,7 @@
                 var today = new Date();
                 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
                 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                var dateTime = '&nbsp;' + date + ' &nbsp; &nbsp;' + time;
+                var dateTime = '  &nbsp;' + date + ' &nbsp; &nbsp;' + time;
                 CurrentDate.innerHTML = dateTime;
             } else {
                 console.log("Input is NOT checked");
@@ -93,7 +159,7 @@ padding-top: 50px; */
             <h3>
                 السياد و السادة
             </h3>
-            <input type="text" height="20px" id="MrMme" value="......." />
+            <input type="text" height="20px" dir="rtl" id="MrMme"   value=" &nbsp; ................." />
 
         </div>
         <div style="width: 40px;"></div>
@@ -101,10 +167,7 @@ padding-top: 50px; */
             <h3>
                 موبايل
             </h3>
-
-
-
-            <input type="text" height="20px" id="Mobile" value="Morocco" />
+            <input type="text" height="20px" id="Mobile"  value=" &nbsp; ................."  />
 
         </div>
         <div style="width: 40px;"></div>
@@ -114,24 +177,16 @@ padding-top: 50px; */
             </h3>
             <!-- <div style="width: 40px;"></div> -->
 
-            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+            <input type="text" height="20px" id="AreaValue" value=" &nbsp; ................" />
 
         </div>
 
         <div style="width: 70px;"></div>
-        <!-- <button onclick="myFunction2()" style="  background-color: DodgerBlue;
-border: none;
-color: white;
-padding: 12px 30px;
-cursor: pointer;
-font-size: 20px;">
-            download
-        </button> -->
         <div>
             <h3>
                 قطعة
             </h3>
-            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+            <input type="text" height="20px" id="Section" value=" &nbsp; ................" />
         </div>
     </div>
 
@@ -144,7 +199,7 @@ padding-top: 50px;
             <h3>
                 شارع
             </h3>
-            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+            <input type="text" height="20px" id="Rue" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
@@ -152,14 +207,14 @@ padding-top: 50px;
             <h3>
                 جادة
             </h3>
-            <input type="text" height="20px" id="MrMme" value="Morocco" />
+            <input type="text" height="20px" id="Jada" value=" &nbsp; ................" />
         </div>
         <div style="width: 40px;"></div>
         <div>
             <h3>
                 منزل
             </h3>
-            <input type="text" height="20px" id="Mobile" value="Morocco" />
+            <input type="text" height="20px" id="Home" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
@@ -167,7 +222,7 @@ padding-top: 50px;
             <h3>
                 دور
             </h3>
-            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+            <input type="text" height="20px" id="Dor" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
@@ -175,7 +230,7 @@ padding-top: 50px;
             <h3>
                 شقة
             </h3>
-            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+            <input type="text" height="20px" id="Appartement" value=" &nbsp; ................" />
         </div>
     </div>
     <div style="display: flex;
@@ -187,7 +242,7 @@ padding-top: 50px;
             <h3>
                 التوصبل
             </h3>
-            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+            <input type="text" height="20px" id="Transport" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
@@ -195,14 +250,14 @@ padding-top: 50px;
             <h3>
                 المجموع
             </h3>
-            <input type="text" height="20px" id="MrMme" value="Morocco" />
+            <input type="text" height="20px" id="Total" value=" &nbsp; ................" />
         </div>
         <div style="width: 40px;"></div>
         <div>
             <h3>
                 المندوب
             </h3>
-            <input type="text" height="20px" id="Mobile" value="Morocco" />
+            <input type="text" height="20px" id="Mandoub" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
@@ -210,7 +265,7 @@ padding-top: 50px;
             <h3>
                 اسم المستلم
             </h3>
-            <input type="text" height="20px" id="AreaValue" value="Morocco" />
+            <input type="text" height="20px" id="Recepteur" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
@@ -288,13 +343,13 @@ padding-top: 50px;
             text-align: right;
             font-size: 15px;
 
-            ">
-                التاريخ :
-                <span id="CurrentDate">
+            "> التاريخ
+            &nbsp;
+               <span id="CurrentDate"> 
+                     :
+               
                     ...................
                 </span>
-
-                ه
 
             </p>
             <div style="
@@ -327,7 +382,14 @@ padding-top: 50px;
             font-size: 16px;
 
             ">
-                السياد و السادة : ..........................ه
+                السياد  و السادة 
+                &nbsp;
+          
+                 
+                <span id="MrMmeCell">
+                  :  &nbsp; ...............
+                </span>
+
             </p>
             <div style="width: 78px;
             
@@ -341,7 +403,13 @@ padding-top: 50px;
             font-size: 16px;
 
             ">
-                موبايل : ...........................ه
+                موبايل 
+                &nbsp;
+                <span id="mobileCell">
+
+                    : ...........................
+           
+                </span>
             </p>
         </div>
 
@@ -355,7 +423,7 @@ padding-top: 50px;
                        /* border-radius: 100em; */
                         overflow: hidden;        ">
                 <tr>
-                    <th colspan="5">المنطقة</th>
+                    <th >المنطقة</th>
                     <th>
                         قطعة
                     </th>
@@ -379,12 +447,13 @@ padding-top: 50px;
 
                 </tr>
                 <tr style="height: 40px;">
-                    <td colspan="5" id="area"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td  id="area"></td>
+                    <td id="SectionCell"></td>
+                    <td id="RueCell"></td>
+                    <td id="JadaCell"></td>
+                    <td id="HomeCell"></td>
+                    <td id="DorCell"></td>
+                    <td id="AppartementCell"></td>
                 </tr>
 
             </table>
@@ -509,7 +578,17 @@ padding-top: 50px;
                     <tr>
                         <td style="width: 32.9086%;
                         text-align: right;
-                        ">التوصبل &nbsp; د.ك</td>
+                        direction: rtl;
+                        ">
+                    التوصبل &nbsp;
+                <span id="transportCell">
+                    ..................
+                </span>
+                <span style="text-align: left;">
+                    
+                    د.ك
+                </span>
+                </td>
                         <td style="width: 11.7372%;"><br></td>
                         <td style="width: 13.2199%;"><br></td>
                         <td style="width: 13.3157%;"><br></td>
@@ -519,10 +598,14 @@ padding-top: 50px;
                     <tr>
                         <td colspan="4" style="width: 71.1697%;" dir="rtl">
 
-
+<span style="text-align: right;">
+    
                             المجموع د.ك
-                            <span>....................................................................</span>
+</span>
+                            <span id="TotalCell" style="text-align: center;">....................................................................</span>
+                            <span style="text-align: left;">
                             Total K.d
+                            </span>
                         </td>
                         <td style="width: 15.1705%;"><br></td>
                         <td style="width: 13.3927%;"><br></td>
@@ -561,7 +644,11 @@ padding-top: 50px;
                 text-align: center;
                 font-size: 16px;
                 ">
-                    المندوب : ..................ه
+                    المندوب 
+                    <span id="MandoubCell" >
+                       : .................. 
+                    </span>
+                    
                 </p>
                 <div style="width: 38px;
                 
@@ -575,7 +662,11 @@ padding-top: 50px;
                 
     
                 ">
-                    اسم المستلم : ..................ه
+                    اسم المستلم 
+                    <span id="RecepteurCell" >
+                        : .................. 
+                     </span>
+                     
                 </p>
                 <div style="width: 28px;
                 
@@ -588,8 +679,12 @@ padding-top: 50px;
                 font-size: 16px;
     
                 ">
-                    توقيع المستلم : .................ه
-                </p>
+                &nbsp;
+                    توقيع  
+                    &nbsp;
+                    المستلم 
+                    &nbsp;
+                                    </p>
             </div>
 
 
