@@ -39,37 +39,50 @@ padding-top: 50px; */
 
         <div style="width: 70px;"></div>
         <div>
-            <h3>
+            <!-- <h3>
+
                 السياد و السادة
-            </h3>
-            <input type="text" height="20px" dir="rtl" id="MrMme" value=" &nbsp; ................." />
+            </h3> -->
+            <input type="text" id="MrMme" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
+
+                السياد و السادة
+           
+                " />
+            <input type="hidden" id="MrMme"  dir="rtl" value=" &nbsp; ................" />
 
         </div>
         <div style="width: 40px;"></div>
         <div>
-            <h3>
-                موبايل
-            </h3>
-            <input type="text" height="20px" id="Mobile" value=" &nbsp; ................." />
+           
+            <input type="text" id="Mobile" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
 
+            موبايل
+       
+            " />
+        <input type="hidden" id="Mobile"  dir="rtl" value=" &nbsp; ................" />
+         
         </div>
         <div style="width: 40px;"></div>
         <div>
-            <h3>
-                المنطقة
-            </h3>
-            <!-- <div style="width: 40px;"></div> -->
+            
+            <input type="text" id="AreaValue" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
 
-            <input type="text" height="20px" id="AreaValue" value=" &nbsp; ................" />
-
+            المنطقة
+       
+            " />
+        <input type="hidden" id="AreaValue"  dir="rtl" value=" &nbsp; ................" />
+           
         </div>
 
         <div style="width: 70px;"></div>
         <div>
-            <h3>
-                قطعة
-            </h3>
-            <input type="text" height="20px" id="Section" value=" &nbsp; ................" />
+
+            <input type="text" id="Section" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
+
+            قطعة
+       
+            " />
+        <input type="hidden" id="Section"  dir="rtl" value=" &nbsp; ................" />
         </div>
     </div>
 
@@ -80,41 +93,57 @@ padding-bottom: 30px;
 
         <div style="width: 70px;"></div>
         <div>
-            <h3>
-                شارع
-            </h3>
-            <input type="text" height="20px" id="Rue" value=" &nbsp; ................" />
+
+
+            <input type="text" id="Rue" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
+
+            شارع
+       
+            " />
+        <input type="hidden" id="Rue"  dir="rtl" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
         <div>
-            <h3>
-                جادة
-            </h3>
-            <input type="text" height="20px" id="Jada" value=" &nbsp; ................" />
+
+            <input type="text" id="Jada" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
+
+            جادة
+       
+            " />
+        <input type="hidden" id="Jada"  dir="rtl" value=" &nbsp; ................" />
         </div>
         <div style="width: 40px;"></div>
         <div>
-            <h3>
-                منزل
-            </h3>
-            <input type="text" height="20px" id="Home" value=" &nbsp; ................" />
+
+            <input type="text" id="Home" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
+
+            منزل
+       
+            " />
+        <input type="hidden" id="Home"  dir="rtl" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
         <div>
-            <h3>
-                دور
-            </h3>
-            <input type="text" height="20px" id="Dor" value=" &nbsp; ................" />
+
+            <input type="text" id="Dor" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
+
+            دور
+       
+            " />
+        <input type="hidden" id="Dor"  dir="rtl" value=" &nbsp; ................" />
         </div>
 
         <div style="width: 40px;"></div>
         <div>
-            <h3>
-                شقة
-            </h3>
-            <input type="text" height="20px" id="Appartement" value=" &nbsp; ................" />
+
+            <input type="text" id="Appartement" height="20px" style="margin-top: 50px;" dir="rtl" placeholder="
+
+            شقة
+       
+            " />
+        <input type="hidden" id="Appartement"  dir="rtl" value=" &nbsp; ................" />
         </div>
     </div>
 
@@ -450,22 +479,7 @@ padding-top: 50px;
 
       
     </div>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-              content.style.maxHeight = null;
-            } else {
-              content.style.maxHeight = content.scrollHeight + "px";
-            } 
-          });
-        }
-        </script>
+
 
 
 
@@ -530,8 +544,10 @@ padding-top: 10px;
 
     <br><br><br><br><br>
 
-
-    <div id="divIdToPrint" style="
+    <button class="collapsible">Pdf Preview</button>
+    <div class="content">
+     
+         <div id="divIdToPrint" style="
     border: 1.5px solid rgb(77, 74, 228);
     /* the right dimensions */
     /* width: calc(147.83*3.5px); */
@@ -1190,11 +1206,29 @@ background-color:rgb(46, 46, 243)  ;
         </div>
 
     </div>
+   
+
+    </div>
 
 
     <br><br><br><br>
 
-
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
     <script src="./html2pdf.js"></script>
 
 </body>
