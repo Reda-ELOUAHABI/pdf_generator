@@ -44,7 +44,9 @@ function show(data) {
     <td>${r.id} </td>
     <td>${r.title}</td>
     <td>${r.prix}</td> 
-       <td><input type="checkbox" /> </td> 
+       <td>
+       <input type="checkbox" />
+        </td> 
           <td> <a onclick="Test(${r.id})" > 🗑️</a> </td>
 </tr>`;
     }
