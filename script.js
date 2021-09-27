@@ -36,6 +36,7 @@ function show(data) {
           <th>Delete</th> 
          </tr>`;
 
+         
     // Loop to access all rows 
     for (let r of data) {
         // console.log(`r.id :  ${r.id}`) ❌ 
