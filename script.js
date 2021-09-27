@@ -1,4 +1,63 @@
 
+// Data Fetching
+// api url
+const api_url =
+    "https://pdf-api-generator.herokuapp.com/api/tutorials/";
+
+// Defining async function
+async function getapi(url) {
+
+    // Storing response
+    const response = await fetch(url);
+
+    // Storing data in form of JSON
+    var data = await response.json();
+    //  console.log(data);
+    if (response) {
+        hideloader();
+    }
+    show(data);
+}
+// Calling that async function
+getapi(api_url);
+
+// Function to hide the loader
+function hideloader() {
+    document.getElementById('loading').style.display = 'none';
+}
+// Function to define innerHTML for HTML table
+function show(data) {
+    let tab =
+        `<tr>
+            
+          <th>Id</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Items  checked </th>
+         </tr>`;
+
+    // Loop to access all rows 
+    for (let r of data) {
+        // console.log(`r.id :  ${r.id}`)
+        tab += `<tr> 
+           
+    <td>${r.id} </td>
+    <td>${r.title}</td>
+    <td>${r.prix}</td> 
+       <td><input type="checkbox" /> </td>   
+</tr>`;
+    }
+    // Setting innerHTML as tab variable
+    document.getElementById("employees").innerHTML = tab;
+}
+
+
+
+
+
+
+
+// Pdf Genarating fct
 // let area= document.getElementById('area').innerHTML("coucou");
 function myFunction2() {
 
@@ -257,8 +316,48 @@ function myFunction2() {
     RecepteurCell.innerHTML = '&nbsp; &nbsp;' + Recepteur.value + '&nbsp;';
 
 
+/*
 
+*/
 
+    //Reference the Table.
+    var grid = document.getElementById("employees");
+
+    //Reference the CheckBoxes in Table.
+    var checkBoxes = grid.getElementsByTagName("INPUT");
+    var message = "Id        title      Price\n";
+
+    //Loop through the CheckBoxes.
+    for (var i = 0; i < checkBoxes.length; i++) {
+        if (checkBoxes[i].checked) {
+            console.log(detailsIn1);
+            var row = checkBoxes[i].parentNode.parentNode;
+            message += row.cells[0].innerHTML;
+            message += row.cells[1].innerHTML;
+            message += "   " + row.cells[2].innerHTML;
+            //message += "   " + row.cells[3].innerHTML;
+            message += "\n";
+            window['detailsInn'+i] = + row.cells[1];
+            
+            var details11 = document.getElementById("details1");
+            details11.innerHTML = '&nbsp;' + detailsInn1.value + '&nbsp;';
+            console.log(detailsInn1);
+            //changins ids of table to vars
+            //innerhtml to table checked value
+            
+            /*
+            eval("detailsIn"+ i +" = "+i);
+            console.log("cc");
+            console.log(detailsIn1);
+            console.log(detailsIn2);
+            console.log("cc");
+            */
+
+        }
+    }
+
+    //Display selected Row data in Alert Box.
+    alert(message);
 
 
     var CurrentDate = document.getElementById("CurrentDate");
@@ -300,3 +399,13 @@ function myFunction2() {
     html2pdf().set(opt).from(input).save();
 
 }
+
+
+function GetSelected() {
+
+
+
+
+
+}
+
