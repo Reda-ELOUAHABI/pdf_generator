@@ -28,22 +28,24 @@ function hideloader() {
 function show(data) {
     let tab =
         `<tr>
-            
+        
           <th>Id</th>
           <th>Title</th>
           <th>Price</th>
           <th>Items  checked </th>
+          <th>Delete</th> 
          </tr>`;
 
     // Loop to access all rows 
     for (let r of data) {
-        // console.log(`r.id :  ${r.id}`)
+        // console.log(`r.id :  ${r.id}`) ❌ 
         tab += `<tr> 
-           
+          
     <td>${r.id} </td>
     <td>${r.title}</td>
     <td>${r.prix}</td> 
-       <td><input type="checkbox" /> </td>   
+       <td><input type="checkbox" /> </td> 
+          <td> <a onclick="Test(${r.id})" > 🗑️</a> </td>
 </tr>`;
     }
     // Setting innerHTML as tab variable
@@ -52,64 +54,8 @@ function show(data) {
 
 
 
-
-
-
-
-// Pdf Genarating fct
-// let area= document.getElementById('area').innerHTML("coucou");
-function myFunction2() {
-
-    // Row 1
-    // MrMme 
-    var MrMme = document.getElementById("MrMme");
-    var MrMmeCell = document.getElementById("MrMmeCell");
-    MrMmeCell.innerHTML = ' &nbsp;' + MrMme.value + '&nbsp;';
-
-    // Mobile 
-    var Mobile = document.getElementById("Mobile");
-    var mobileCell = document.getElementById("mobileCell");
-    mobileCell.innerHTML = '&nbsp; &nbsp;' + Mobile.value + '&nbsp;';
-
-    // Area
-    var AreaValue = document.getElementById("AreaValue");
-    var area = document.getElementById("area");
-    area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
-
-    // Section 
-    var Section = document.getElementById("Section");
-    var SectionCell = document.getElementById("SectionCell");
-    SectionCell.innerHTML = ' &nbsp;' + Section.value + '&nbsp;';
-
-
-    // Rue 
-    var Rue = document.getElementById("Rue");
-    var RueCell = document.getElementById("RueCell");
-    RueCell.innerHTML = ' &nbsp;' + Rue.value + '&nbsp;';
-
-
-    // Jada 
-    var Jada = document.getElementById("Jada");
-    var JadaCell = document.getElementById("JadaCell");
-    JadaCell.innerHTML = ' &nbsp;' + Jada.value + '&nbsp;';
-
-    // Home 
-    var Home = document.getElementById("Home");
-    var HomeCell = document.getElementById("HomeCell");
-    HomeCell.innerHTML = ' &nbsp;' + Home.value + '&nbsp;';
-
-    // Dor 
-    var Dor = document.getElementById("Dor");
-    var DorCell = document.getElementById("DorCell");
-    DorCell.innerHTML = ' &nbsp;' + Dor.value + '&nbsp;';
-
-    // Appartement 
-    var Appartement = document.getElementById("Appartement");
-    var AppartementCell = document.getElementById("AppartementCell");
-    AppartementCell.innerHTML = ' &nbsp;' + Appartement.value + '&nbsp;';
-
-
-    // Row 2
+function fillProducts(){
+        // Row 2
     // Table Row 1
     var detailsIn1 = document.getElementById("detailsIn1");
     var details1 = document.getElementById("details1");
@@ -288,6 +234,64 @@ function myFunction2() {
     var TotalAmountFilsIn7 = document.getElementById("TotalAmountFilsIn7");
     var TAFils7 = document.getElementById("TAFils7");
     TAFils7.innerHTML = ' &nbsp;' + TotalAmountFilsIn7.value + '&nbsp;';
+}
+
+
+
+// Pdf Genarating fct
+// let area= document.getElementById('area').innerHTML("coucou");
+function myFunction2() {
+
+    // Row 1
+    // MrMme 
+    var MrMme = document.getElementById("MrMme");
+    var MrMmeCell = document.getElementById("MrMmeCell");
+    MrMmeCell.innerHTML = ' &nbsp;' + MrMme.value + '&nbsp;';
+
+    // Mobile 
+    var Mobile = document.getElementById("Mobile");
+    var mobileCell = document.getElementById("mobileCell");
+    mobileCell.innerHTML = '&nbsp; &nbsp;' + Mobile.value + '&nbsp;';
+
+    // Area
+    var AreaValue = document.getElementById("AreaValue");
+    var area = document.getElementById("area");
+    area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
+
+    // Section 
+    var Section = document.getElementById("Section");
+    var SectionCell = document.getElementById("SectionCell");
+    SectionCell.innerHTML = ' &nbsp;' + Section.value + '&nbsp;';
+
+
+    // Rue 
+    var Rue = document.getElementById("Rue");
+    var RueCell = document.getElementById("RueCell");
+    RueCell.innerHTML = ' &nbsp;' + Rue.value + '&nbsp;';
+
+
+    // Jada 
+    var Jada = document.getElementById("Jada");
+    var JadaCell = document.getElementById("JadaCell");
+    JadaCell.innerHTML = ' &nbsp;' + Jada.value + '&nbsp;';
+
+    // Home 
+    var Home = document.getElementById("Home");
+    var HomeCell = document.getElementById("HomeCell");
+    HomeCell.innerHTML = ' &nbsp;' + Home.value + '&nbsp;';
+
+    // Dor 
+    var Dor = document.getElementById("Dor");
+    var DorCell = document.getElementById("DorCell");
+    DorCell.innerHTML = ' &nbsp;' + Dor.value + '&nbsp;';
+
+    // Appartement 
+    var Appartement = document.getElementById("Appartement");
+    var AppartementCell = document.getElementById("AppartementCell");
+    AppartementCell.innerHTML = ' &nbsp;' + Appartement.value + '&nbsp;';
+
+
+
 
 
     // Row 3
@@ -362,14 +366,14 @@ function GetSelected() {
 
 */
 // if (!document.getElementsByTagName || !document.createTextNode) return;
-var rows = document.getElementById('employees')
-// .getElementsByTagName('tbody')[0]
-.getElementsByTagName('tr');
-for (i = 0; i < rows.length; i++) {
-    rows[i].onclick = function() {
-        alert(this.rowIndex + 2);
-    }
-}
+// var rows = document.getElementById('employees')
+// // .getElementsByTagName('tbody')[0]
+// .getElementsByTagName('tr');
+// for (i = 0; i < rows.length; i++) {
+//     rows[i].onclick = function() {
+//         alert(this.rowIndex);
+//     }
+// }
     //Reference the Table.
     var grid = document.getElementById("employees");
 
@@ -390,53 +394,71 @@ for (i = 0; i < rows.length; i++) {
 
 
             // Filling the Table From API
-            if(i==0)
+            if(i%7==0)
             {
                 var details11 = document.getElementById("details1");
             details11.innerHTML = '&nbsp;' +
             row.cells[1].innerHTML
             + '&nbsp;';
+
+            
+            var UPFils1 = document.getElementById("UPFils1");
+            UPFils1.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+
             }
-            if(i==1)
+            if(i%7==1)
             {
                 var details12 = document.getElementById("details2");
             details12.innerHTML = '&nbsp;' +
             row.cells[1].innerHTML
             + '&nbsp;';
+            var UPFils2 = document.getElementById("UPFils2");
+            UPFils2.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i==2)
+            if(i%7==2)
             {
                 var details13 = document.getElementById("details3");
             details13.innerHTML = '&nbsp;' +
             row.cells[1].innerHTML
             + '&nbsp;';
-            }if(i==3)
+            var UPFils3 = document.getElementById("UPFils3");
+            UPFils3.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+            }
+            if(i%7==3)
             {
                 var details14 = document.getElementById("details4");
             details14.innerHTML = '&nbsp;' +
             row.cells[1].innerHTML
             + '&nbsp;';
+            var UPFils4 = document.getElementById("UPFils4");
+            UPFils4.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i==4)
+            if(i%7==4)
             {
                 var details15 = document.getElementById("details5");
             details15.innerHTML = '&nbsp;' +
             row.cells[1].innerHTML
             + '&nbsp;';
+            var UPFils5 = document.getElementById("UPFils5");
+            UPFils5.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i==5)
+            if(i%7==5)
             {
                 var details16 = document.getElementById("details6");
             details16.innerHTML = '&nbsp;' +
             row.cells[1].innerHTML
             + '&nbsp;';
+            var UPFils6 = document.getElementById("UPFils6");
+            UPFils6.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i==6)
+            if(i%7==6)
             {
                 var details17 = document.getElementById("details7");
             details17.innerHTML = '&nbsp;' +
             row.cells[1].innerHTML
             + '&nbsp;';
+            var UPFils7 = document.getElementById("UPFils7");
+            UPFils7.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
 
 
@@ -472,9 +494,6 @@ async function addProduct2API(){
 
     alert(Product2API + Prix2API);
 
-    const postUrl ="https://pdf-api-generator.herokuapp.com/api/tutorials";
-
-
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
@@ -496,6 +515,8 @@ async function addProduct2API(){
       .catch(error => console.log('error', error));
 
 
+      location.reload();
+
 
     /*
     const response = await  fetch(postUrl, {
@@ -516,4 +537,29 @@ async function addProduct2API(){
         });
 */
 
+}
+
+function Test(x) {
+
+// var rows = document.getElementById('employees')
+// // .getElementsByTagName('tbody')[0]
+// .getElementsByTagName('tr')
+// .getElementsByTagName('td')
+// .getElementsByTagName('a');
+// for (i = 0; i < rows.length; i++) {
+//     rows[i].onclick = function() {
+//         alert(this.rowIndex);
+//     }
+// }
+var requestOptions = {
+    method: 'DELETE',
+    redirect: 'follow'
+  };
+  
+  fetch(`https://pdf-api-generator.herokuapp.com/api/tutorials/${x}`, requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+    location.reload();
+    alert( `item No ${x} removed`);
 }
