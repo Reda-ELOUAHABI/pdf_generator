@@ -17,8 +17,32 @@
 
 
 <!-- 2nd Task -->
-<div>
-    <br><br><br><br>
+<div style="padding-right: 100px;">
+    <br><br>
+
+    <div style="
+    margin-top: 30px;
+    width: 300px;
+    ">
+    <input type="number" id="PrixAPI" placeholder="
+        الثمن
+        " />
+    <!-- <input type="hidden" id="QTYIn6" value=" &nbsp; ................" /> -->
+</div>
+    <div dir="rtl" style="
+    width: 390px;
+    ">
+    <input style="
+        width: 300px;
+        height: 100px;
+        " type="text" id="ProductAPI" placeholder="
+        اسم المنتج
+        " />
+
+        <input type="button" value="Add product to template" onclick="addProduct2API()" />
+    <!-- <input type="hidden" id="detailsIn1" value=" &nbsp; ................" /> -->
+</div>
+    <br><br>
     <!-- Here a loader is created which 
              loads till response comes -->
              <div class="d-flex justify-content-center">
@@ -35,7 +59,8 @@
                 }
                 table tr:not(:first-child):hover{background-color: #ddd;}
             </style>
-            <table id="employees"  cellspacing="0" rules="all"  style="border-collapse: collapse; margin: 100px;"></table>
+            <table id="employees"  cellspacing="0" rules="all"  
+            style="border-collapse: collapse; margin: 100px;"></table>
             <br><br><br><br><br><br>
             <input type="button" value="Choose those items" onclick="GetSelected()" />
 

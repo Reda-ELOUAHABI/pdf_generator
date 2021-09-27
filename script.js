@@ -1,4 +1,3 @@
-
 // Data Fetching
 // api url
 const api_url =
@@ -316,50 +315,6 @@ function myFunction2() {
     RecepteurCell.innerHTML = '&nbsp; &nbsp;' + Recepteur.value + '&nbsp;';
 
 
-/*
-
-*/
-
-    //Reference the Table.
-    var grid = document.getElementById("employees");
-
-    //Reference the CheckBoxes in Table.
-    var checkBoxes = grid.getElementsByTagName("INPUT");
-    var message = "Id        title      Price\n";
-
-    //Loop through the CheckBoxes.
-    for (var i = 0; i < checkBoxes.length; i++) {
-        if (checkBoxes[i].checked) {
-            console.log(detailsIn1);
-            var row = checkBoxes[i].parentNode.parentNode;
-            message += row.cells[0].innerHTML;
-            message += row.cells[1].innerHTML;
-            message += "   " + row.cells[2].innerHTML;
-            //message += "   " + row.cells[3].innerHTML;
-            message += "\n";
-            window['detailsInn'+i] = + row.cells[1];
-            
-            var details11 = document.getElementById("details1");
-            details11.innerHTML = '&nbsp;' + detailsInn1.value + '&nbsp;';
-            console.log(detailsInn1);
-            //changins ids of table to vars
-            //innerhtml to table checked value
-            
-            /*
-            eval("detailsIn"+ i +" = "+i);
-            console.log("cc");
-            console.log(detailsIn1);
-            console.log(detailsIn2);
-            console.log("cc");
-            */
-
-        }
-    }
-
-    //Display selected Row data in Alert Box.
-    alert(message);
-
-
     var CurrentDate = document.getElementById("CurrentDate");
     var DateisChecked = document.getElementById("myCheckBox").checked;
 
@@ -403,9 +358,162 @@ function myFunction2() {
 
 function GetSelected() {
 
+/*
 
+*/
+// if (!document.getElementsByTagName || !document.createTextNode) return;
+var rows = document.getElementById('employees')
+// .getElementsByTagName('tbody')[0]
+.getElementsByTagName('tr');
+for (i = 0; i < rows.length; i++) {
+    rows[i].onclick = function() {
+        alert(this.rowIndex + 2);
+    }
+}
+    //Reference the Table.
+    var grid = document.getElementById("employees");
+
+    //Reference the CheckBoxes in Table.
+    var checkBoxes = grid.getElementsByTagName("INPUT");
+    var message = "Id        title      Price\n";
+
+    //Loop through the CheckBoxes.
+    for (var i = 0; i < checkBoxes.length; i++) {
+        if (checkBoxes[i].checked) {
+            var row = checkBoxes[i].parentNode.parentNode;
+            message += row.cells[0].innerHTML;
+            message += row.cells[1].innerHTML;
+            message += "   " + row.cells[2].innerHTML;
+            //message += "   " + row.cells[3].innerHTML;
+            message += "\n";
+            // window['detailsInn'+i] = + row.cells[1];
+
+
+            // Filling the Table From API
+            if(i==0)
+            {
+                var details11 = document.getElementById("details1");
+            details11.innerHTML = '&nbsp;' +
+            row.cells[1].innerHTML
+            + '&nbsp;';
+            }
+            if(i==1)
+            {
+                var details12 = document.getElementById("details2");
+            details12.innerHTML = '&nbsp;' +
+            row.cells[1].innerHTML
+            + '&nbsp;';
+            }
+            if(i==2)
+            {
+                var details13 = document.getElementById("details3");
+            details13.innerHTML = '&nbsp;' +
+            row.cells[1].innerHTML
+            + '&nbsp;';
+            }if(i==3)
+            {
+                var details14 = document.getElementById("details4");
+            details14.innerHTML = '&nbsp;' +
+            row.cells[1].innerHTML
+            + '&nbsp;';
+            }
+            if(i==4)
+            {
+                var details15 = document.getElementById("details5");
+            details15.innerHTML = '&nbsp;' +
+            row.cells[1].innerHTML
+            + '&nbsp;';
+            }
+            if(i==5)
+            {
+                var details16 = document.getElementById("details6");
+            details16.innerHTML = '&nbsp;' +
+            row.cells[1].innerHTML
+            + '&nbsp;';
+            }
+            if(i==6)
+            {
+                var details17 = document.getElementById("details7");
+            details17.innerHTML = '&nbsp;' +
+            row.cells[1].innerHTML
+            + '&nbsp;';
+            }
+
+
+
+
+
+            //changins ids of table to vars
+            //innerhtml to table checked value
+            
+            /*
+            eval("detailsIn"+ i +" = "+i);
+            console.log("cc");
+            console.log(detailsIn1);
+            console.log(detailsIn2);
+            console.log("cc");
+            */
+
+        }
+    }
+
+    //Display selected Row data in Alert Box.
+    // alert(message);
 
 
 
 }
 
+async function addProduct2API(){
+    
+    var Product2API = document.getElementById("ProductAPI").value;
+
+    var Prix2API = document.getElementById("PrixAPI").value;
+
+    alert(Product2API + Prix2API);
+
+    const postUrl ="https://pdf-api-generator.herokuapp.com/api/tutorials";
+
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "title": Product2API,
+      "prix": Prix2API
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch("https://pdf-api-generator.herokuapp.com/api/tutorials", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
+
+
+    /*
+    const response = await  fetch(postUrl, {
+        method:"POST",
+        headers: {
+            '           Content-Type': 'application/json',
+                      },
+        body: JSON.stringify({
+            title: "TestProoodaact",
+            prix: "10"
+            })
+        }).then(result => {
+            // do something with the result
+            console.log("Completed with result:", result);
+        }).catch(err => {
+            // if any error occured, then catch it here
+            console.error(err);
+        });
+*/
+
+}
