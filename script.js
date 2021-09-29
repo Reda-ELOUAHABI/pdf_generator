@@ -114,10 +114,11 @@ function show(data) {
     let tab =
         `<tr>
         
-          <th>Id</th>
+          <th hidden>Id</th>
           <th>Title</th>
           <th>Price</th>
           <th>Items  checked </th>
+          <th hidden>Quantity </th>
           <th>Delete</th> 
          </tr>`;
 
@@ -127,12 +128,13 @@ function show(data) {
         // console.log(`r.id :  ${r.id}`) ❌ 
         tab += `<tr> 
           
-    <td>${r.id} </td>
+    <td hidden>${r.id} </td>
     <td>${r.title}</td>
     <td>${r.prix}</td> 
        <td>
        <input type="checkbox" />
         </td> 
+        <td hidden > <input type="number" style="width:20px;"  value="1"/> </td>
           <td> <a onclick="Test(${r.id})" > 🗑️</a> </td>
 </tr>`;
     }
@@ -141,7 +143,7 @@ function show(data) {
 }
 
 
-
+// statiquement
 function fillProducts() {
     // Row 2
     // Table Row 1
