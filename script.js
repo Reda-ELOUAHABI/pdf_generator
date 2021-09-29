@@ -1,7 +1,13 @@
 // Data Fetching
-// api url
-const api_url =
+
+
+// api urls
+const api_url_product =
     "https://pdf-api-generator.herokuapp.com/api/tutorials/";
+
+const api_url_region =
+    "https://resgons4api-generator.herokuapp.com/api/tutorials/";
+
 
 // Defining async function
 async function getapi(url) {
@@ -13,17 +19,96 @@ async function getapi(url) {
     var data = await response.json();
     //  console.log(data);
     if (response) {
+        console.log(response);
         hideloader();
     }
     show(data);
 }
 // Calling that async function
-getapi(api_url);
+// 4 Product
+
+getapi(api_url_product);
+
+// 4 Region
+
+getapi(api_url_product);
+
+
+
+// Add products
+async function addProduct2API() {
+
+    var Product2API = document.getElementById("ProductAPI").value;
+
+    var Prix2API = document.getElementById("PrixAPI").value;
+
+    // alert(Product2API + Prix2API);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+        "title": Product2API,
+        "prix": Prix2API
+    });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch(api_url_product, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
+
+    location.reload();
+
+}
+
+
+// Add regions
+async function addRegion2API() {
+
+    var Region2API = document.getElementById("RegionAPI").value;
+
+    alert(Region2API);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+        "title": Region2API
+
+    });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch(api_url_region, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
+
+    location.reload();
+
+}
+
+
 
 // Function to hide the loader
 function hideloader() {
     document.getElementById('loading').style.display = 'none';
 }
+
 // Function to define innerHTML for HTML table
 function show(data) {
     let tab =
@@ -36,7 +121,7 @@ function show(data) {
           <th>Delete</th> 
          </tr>`;
 
-         
+
     // Loop to access all rows 
     for (let r of data) {
         // console.log(`r.id :  ${r.id}`) ❌ 
@@ -57,8 +142,8 @@ function show(data) {
 
 
 
-function fillProducts(){
-        // Row 2
+function fillProducts() {
+    // Row 2
     // Table Row 1
     var detailsIn1 = document.getElementById("detailsIn1");
     var details1 = document.getElementById("details1");
@@ -257,9 +342,9 @@ function myFunction2() {
     mobileCell.innerHTML = '&nbsp; &nbsp;' + Mobile.value + '&nbsp;';
 
     // Area
-    var AreaValue = document.getElementById("AreaValue");
-    var area = document.getElementById("area");
-    area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
+    // var AreaValue = document.getElementById("AreaValue");
+    // var area = document.getElementById("area");
+    // area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
 
     // Section 
     var Section = document.getElementById("Section");
@@ -363,26 +448,42 @@ function myFunction2() {
 }
 
 
+
+// Get selected item from products table
 function GetSelected() {
 
-/*
-
-*/
-// if (!document.getElementsByTagName || !document.createTextNode) return;
-// var rows = document.getElementById('employees')
-// // .getElementsByTagName('tbody')[0]
-// .getElementsByTagName('tr');
-// for (i = 0; i < rows.length; i++) {
-//     rows[i].onclick = function() {
-//         alert(this.rowIndex);
-//     }
-// }
+    /*
+    
+    */
+    // if (!document.getElementsByTagName || !document.createTextNode) return;
+    // var rows = document.getElementById('employees')
+    // // .getElementsByTagName('tbody')[0]
+    // .getElementsByTagName('tr');
+    // for (i = 0; i < rows.length; i++) {
+    //     rows[i].onclick = function() {
+    //         alert(this.rowIndex);
+    //     }
+    // }
     //Reference the Table.
     var grid = document.getElementById("employees");
 
     //Reference the CheckBoxes in Table.
     var checkBoxes = grid.getElementsByTagName("INPUT");
     var message = "Id        title      Price\n";
+
+
+    // Area
+    // var AreaValue = document.getElementById("AreaValue");
+    // var area = document.getElementById("area");
+    // area.innerHTML = ' &nbsp;' + "ajajjajjajaoqoqoqomma" + '&nbsp;';
+
+        var select = document.getElementById('op1');
+    var AreaValue = select.options[select.selectedIndex];
+    console.log(AreaValue); 
+            // Area
+            // var AreaValue = document.getElementById("op1");
+             var area = document.getElementById("area");
+            area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
 
     //Loop through the CheckBoxes.
     for (var i = 0; i < checkBoxes.length; i++) {
@@ -397,71 +498,64 @@ function GetSelected() {
 
 
             // Filling the Table From API
-            if(i%7==0)
-            {
+            if (i % 7 == 0) {
                 var details11 = document.getElementById("details1");
-            details11.innerHTML = '&nbsp;' +
-            row.cells[1].innerHTML
-            + '&nbsp;';
+                details11.innerHTML = '&nbsp;' +
+                    row.cells[1].innerHTML
+                    + '&nbsp;';
 
-            
-            var UPFils1 = document.getElementById("UPFils1");
-            UPFils1.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+
+                var UPFils1 = document.getElementById("UPFils1");
+                UPFils1.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
 
             }
-            if(i%7==1)
-            {
+            if (i % 7 == 1) {
                 var details12 = document.getElementById("details2");
-            details12.innerHTML = '&nbsp;' +
-            row.cells[1].innerHTML
-            + '&nbsp;';
-            var UPFils2 = document.getElementById("UPFils2");
-            UPFils2.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+                details12.innerHTML = '&nbsp;' +
+                    row.cells[1].innerHTML
+                    + '&nbsp;';
+                var UPFils2 = document.getElementById("UPFils2");
+                UPFils2.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i%7==2)
-            {
+            if (i % 7 == 2) {
                 var details13 = document.getElementById("details3");
-            details13.innerHTML = '&nbsp;' +
-            row.cells[1].innerHTML
-            + '&nbsp;';
-            var UPFils3 = document.getElementById("UPFils3");
-            UPFils3.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+                details13.innerHTML = '&nbsp;' +
+                    row.cells[1].innerHTML
+                    + '&nbsp;';
+                var UPFils3 = document.getElementById("UPFils3");
+                UPFils3.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i%7==3)
-            {
+            if (i % 7 == 3) {
                 var details14 = document.getElementById("details4");
-            details14.innerHTML = '&nbsp;' +
-            row.cells[1].innerHTML
-            + '&nbsp;';
-            var UPFils4 = document.getElementById("UPFils4");
-            UPFils4.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+                details14.innerHTML = '&nbsp;' +
+                    row.cells[1].innerHTML
+                    + '&nbsp;';
+                var UPFils4 = document.getElementById("UPFils4");
+                UPFils4.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i%7==4)
-            {
+            if (i % 7 == 4) {
                 var details15 = document.getElementById("details5");
-            details15.innerHTML = '&nbsp;' +
-            row.cells[1].innerHTML
-            + '&nbsp;';
-            var UPFils5 = document.getElementById("UPFils5");
-            UPFils5.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+                details15.innerHTML = '&nbsp;' +
+                    row.cells[1].innerHTML
+                    + '&nbsp;';
+                var UPFils5 = document.getElementById("UPFils5");
+                UPFils5.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i%7==5)
-            {
+            if (i % 7 == 5) {
                 var details16 = document.getElementById("details6");
-            details16.innerHTML = '&nbsp;' +
-            row.cells[1].innerHTML
-            + '&nbsp;';
-            var UPFils6 = document.getElementById("UPFils6");
-            UPFils6.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+                details16.innerHTML = '&nbsp;' +
+                    row.cells[1].innerHTML
+                    + '&nbsp;';
+                var UPFils6 = document.getElementById("UPFils6");
+                UPFils6.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
-            if(i%7==6)
-            {
+            if (i % 7 == 6) {
                 var details17 = document.getElementById("details7");
-            details17.innerHTML = '&nbsp;' +
-            row.cells[1].innerHTML
-            + '&nbsp;';
-            var UPFils7 = document.getElementById("UPFils7");
-            UPFils7.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
+                details17.innerHTML = '&nbsp;' +
+                    row.cells[1].innerHTML
+                    + '&nbsp;';
+                var UPFils7 = document.getElementById("UPFils7");
+                UPFils7.innerHTML = ' &nbsp;' + row.cells[2].innerHTML + '&nbsp;';
             }
 
 
@@ -470,7 +564,7 @@ function GetSelected() {
 
             //changins ids of table to vars
             //innerhtml to table checked value
-            
+
             /*
             eval("detailsIn"+ i +" = "+i);
             console.log("cc");
@@ -489,80 +583,29 @@ function GetSelected() {
 
 }
 
-async function addProduct2API(){
-    
-    var Product2API = document.getElementById("ProductAPI").value;
 
-    var Prix2API = document.getElementById("PrixAPI").value;
-
-    alert(Product2API + Prix2API);
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    
-    var raw = JSON.stringify({
-      "title": Product2API,
-      "prix": Prix2API
-    });
-    
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-    
-    fetch("https://pdf-api-generator.herokuapp.com/api/tutorials", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-
-
-      location.reload();
-
-
-    /*
-    const response = await  fetch(postUrl, {
-        method:"POST",
-        headers: {
-            '           Content-Type': 'application/json',
-                      },
-        body: JSON.stringify({
-            title: "TestProoodaact",
-            prix: "10"
-            })
-        }).then(result => {
-            // do something with the result
-            console.log("Completed with result:", result);
-        }).catch(err => {
-            // if any error occured, then catch it here
-            console.error(err);
-        });
-*/
-
-}
-
+// Delet elt from Table
 function Test(x) {
 
-// var rows = document.getElementById('employees')
-// // .getElementsByTagName('tbody')[0]
-// .getElementsByTagName('tr')
-// .getElementsByTagName('td')
-// .getElementsByTagName('a');
-// for (i = 0; i < rows.length; i++) {
-//     rows[i].onclick = function() {
-//         alert(this.rowIndex);
-//     }
-// }
-var requestOptions = {
-    method: 'DELETE',
-    redirect: 'follow'
-  };
-  
-  fetch(`https://pdf-api-generator.herokuapp.com/api/tutorials/${x}`, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    // var rows = document.getElementById('employees')
+    // // .getElementsByTagName('tbody')[0]
+    // .getElementsByTagName('tr')
+    // .getElementsByTagName('td')
+    // .getElementsByTagName('a');
+    // for (i = 0; i < rows.length; i++) {
+    //     rows[i].onclick = function() {
+    //         alert(this.rowIndex);
+    //     }
+    // }
+    var requestOptions = {
+        method: 'DELETE',
+        redirect: 'follow'
+    };
+
+    fetch(`https://pdf-api-generator.herokuapp.com/api/tutorials/${x}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
     location.reload();
-    alert( `item No ${x} removed`);
+    alert(`item No ${x} removed`);
 }
