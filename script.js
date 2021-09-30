@@ -138,7 +138,13 @@ function show(data) {
         </td> 
         <td  >
          <input type="number" 
-         onchange="quantityChanged(${r.prix},document.getElementById('${r.id}').value,document.getElementById('${r.id*777}'))"
+         onchange="quantityChanged(
+             
+             ${r.prix},
+             document.getElementById('${r.id}').value,
+             document.getElementById('${r.id*777}'),
+             
+             )"
           id="${r.id}" style="width:30px;"  value="0" />
           </td>
           <td id="${r.id*777}">${r.prix*0}</td>
@@ -148,20 +154,43 @@ function show(data) {
 </tr>`;
     }
     // Setting innerHTML as tab variable
+    //,         ${r.title}
     document.getElementById("employees").innerHTML = tab;
 }
+let products = [];
 
-
-function quantityChanged(prix,value,totalP){
+function quantityChanged(prix,value,totalP
+    //,title
+    ){
     
-    console.log(
-        prix*value
-    );
+    // console.log(
+    //     prix*value
+    // );
     totalP.innerHTML= prix*value;
     totalPrice+=prix*value;
     alert(totalPrice);
     // document.getElementById("TotalCell").innerHTML = totalPrice;
     // console.log("helloo");
+    if(value!=0){
+        var x = document.getElementsByTagName("tr");
+        console.log("true == "+value+"Row Index=="+x[i].rowIndex);
+        let produit = {
+            "prix": prix,
+            // "title": title,
+            "prixTotal": totalP,
+            "quantity": value
+           };
+           products.push(produit);
+    }
+
+
+
+
+
+
+
+
+
 }
 
 // statiquement
@@ -449,6 +478,19 @@ function myFunction2() {
         console.log("Input is NOT checked");
         CurrentDate.innerHTML = "................";
     }
+
+
+
+
+    //  FIll Products Rows
+    GetSelected();
+
+
+
+
+
+
+
     const input = document.getElementById('divIdToPrint');
     // const area= document.getElementById('area').innerHTML("coucou");
     var opt = {
@@ -475,6 +517,13 @@ function myFunction2() {
 
 // Get selected item from products table
 function GetSelected() {
+
+console.log("let see products ");
+    products.forEach(car => {
+console.log(car);
+    });
+    console.log("let see products ");
+
 
     /*
     
