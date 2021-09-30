@@ -33,7 +33,8 @@ getapi(api_url_product);
 
 getapi(api_url_product);
 
-
+var totalPrice=0;
+var qantity=1;
 
 // Add products
 async function addProduct2API() {
@@ -115,10 +116,11 @@ function show(data) {
         `<tr>
         
           <th hidden>Id</th>
-          <th>Title</th>
-          <th>Price</th>
-          <th>Items  checked </th>
-          <th hidden>Quantity </th>
+          <th style="overflow-wrap: break-word; width:20px;">Title</th>
+          <th>Unity Price</th>
+          <th hidden>  checked </th>
+          <th >Quantity </th>
+          <th >Total Price </th>
           <th>Delete</th> 
          </tr>`;
 
@@ -130,18 +132,37 @@ function show(data) {
           
     <td hidden>${r.id} </td>
     <td>${r.title}</td>
-    <td>${r.prix}</td> 
-       <td>
+    <td  >${r.prix}</td> 
+       <td hidden>
        <input type="checkbox" />
         </td> 
-        <td hidden > <input type="number" style="width:20px;"  value="1"/> </td>
-          <td> <a onclick="Test(${r.id})" > 🗑️</a> </td>
+        <td  >
+         <input type="number" 
+         onchange="quantityChanged(${r.prix},document.getElementById('${r.id}').value,document.getElementById('${r.id*777}'))"
+          id="${r.id}" style="width:30px;"  value="0" />
+          </td>
+          <td id="${r.id*777}">${r.prix*0}</td>
+
+
+          <td> <a onclick="Test(${r.id})">🗑️</a> </td>
 </tr>`;
     }
     // Setting innerHTML as tab variable
     document.getElementById("employees").innerHTML = tab;
 }
 
+
+function quantityChanged(prix,value,totalP){
+    
+    console.log(
+        prix*value
+    );
+    totalP.innerHTML= prix*value;
+    totalPrice+=prix*value;
+    alert(totalPrice);
+    // document.getElementById("TotalCell").innerHTML = totalPrice;
+    // console.log("helloo");
+}
 
 // statiquement
 function fillProducts() {
@@ -394,7 +415,8 @@ function myFunction2() {
     // Total 
     var Total = document.getElementById("Total");
     var TotalCell = document.getElementById("TotalCell");
-    TotalCell.innerHTML = ' &nbsp;' + Total.value + '&nbsp;';
+    // TotalCell.innerHTML = ' &nbsp;' + Total.value + '&nbsp;';
+    TotalCell.innerHTML = ' &nbsp;' + totalPrice + '&nbsp;';
 
 
     // Mandoub 
