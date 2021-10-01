@@ -31,7 +31,7 @@ getapi(api_url_product);
 
 // 4 Region
 
-getapi(api_url_region);
+// getapi(api_url_region);
 
 var totalPrice=0;
 var qantity=1;
