@@ -31,7 +31,7 @@ getapi(api_url_product);
 
 // 4 Region
 
-getapi(api_url_product);
+getapi(api_url_region);
 
 var totalPrice=0;
 var qantity=1;
@@ -124,7 +124,7 @@ function show(data) {
           <th>Delete</th> 
          </tr>`;
 
-
+var i=0;
     // Loop to access all rows 
     for (let r of data) {
         // console.log(`r.id :  ${r.id}`) ❌ 
@@ -139,7 +139,7 @@ function show(data) {
         <td  >
          <input type="number" 
          onchange="quantityChanged(
-             
+            
              ${r.prix},
              document.getElementById('${r.id}').value,
              document.getElementById('${r.id*777}'),
@@ -152,19 +152,36 @@ function show(data) {
 
           <td> <a onclick="Test(${r.id})">🗑️</a> </td>
 </tr>`;
-    }
+    
+i++;
+
+let produit = {
+    "prix":  `${r.prix}`,
+    "title": "`${r.title}`.toString()",
+    "prixTotal": "document.getElementById(`${r.id}`).value*`${r.prix}`",
+    "quantity": "document.getElementById(`${r.id}`).value"
+   };
+   products.push(produit);
+
+
+
+
+}
+console.log("i=="+i);
     // Setting innerHTML as tab variable
     //,         ${r.title}
     document.getElementById("employees").innerHTML = tab;
 }
 let products = [];
 
-function quantityChanged(prix,value,totalP
+function quantityChanged(
+    // title,
+    prix,value,totalP
     //,title
     ){
     
     // console.log(
-    //     prix*value
+    //     id
     // );
     totalP.innerHTML= prix*value;
     totalPrice+=prix*value;
@@ -174,13 +191,13 @@ function quantityChanged(prix,value,totalP
     if(value!=0){
         var x = document.getElementsByTagName("tr");
         console.log("true == "+value+"Row Index=="+x[i].rowIndex);
-        let produit = {
-            "prix": prix,
-            // "title": title,
-            "prixTotal": totalP,
-            "quantity": value
-           };
-           products.push(produit);
+        // let produit = {
+        //     "prix": prix,
+        //     // "title": title,
+        //     "prixTotal": totalP,
+        //     "quantity": value
+        //    };
+        //    products.push(produit);
     }
 
 
