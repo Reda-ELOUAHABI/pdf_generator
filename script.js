@@ -637,6 +637,8 @@ function myFunction2() {
         }
     };
     html2pdf().set(opt).from(input).save();
+    alert("تم التحميل بنجاح");
+    location.reload();
 
 }
 
