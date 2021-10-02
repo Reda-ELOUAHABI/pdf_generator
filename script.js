@@ -32,7 +32,29 @@ getapi(api_url_product);
 
 // 4 Region
 
+
+
+async function getapiRegions() {
+
+    // Storing response
+    const response = await fetch(api_url_region);
+
+    // Storing data in form of JSON
+    var data = await response.json();
+    dataProduit=data;
+    //  console.log(data);
+    if (response) {
+        console.log(response);
+        hideloaderRegions();
+    }
+    showRegions(data);
+}
 // getapi(api_url_region);
+
+
+
+
+
 var dataProduit ;
 var dataProduit4PDF=[] ;
 var totalPrice=0;
@@ -76,9 +98,10 @@ async function addProduct2API() {
 // Add regions
 async function addRegion2API() {
 
+
     var Region2API = document.getElementById("RegionAPI").value;
 
-    alert(Region2API);
+    
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -100,19 +123,74 @@ async function addRegion2API() {
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
-
+alert(Region2API+"\ تمت اضافته بنجاح");
     location.reload();
 
 }
 
 
 
+
 // Function to hide the loader
+function hideloaderRegions() {
+    document.getElementById('loadingRegions').style.display = 'none';
+}
+
+
+
 function hideloader() {
     document.getElementById('loading').style.display = 'none';
 }
 
+
+
+
+
 // Function to define innerHTML for HTML table
+function showRegions(data) {
+    let tab =
+        `<tr>
+        
+          <th hidden>Id</th>
+          <th style="overflow-wrap: break-word; width:20px;">Regions</th>
+          <th>Delete</th> 
+         </tr>`;
+
+var i=0;
+    // Loop to access all rows 
+    for (let r of data) {
+        // console.log(`r.id :  ${r.id}`) ❌ 
+        tab += `<tr> 
+          
+    <td hidden>${r.id} </td>
+    <td>${r.title}</td>
+    
+
+          <td> <a onclick="TestRegions(${r.id})">🗑️</a> </td>
+</tr>`;
+    
+i++;
+
+// let produit = {
+//     "prix":  `${r.prix}`,
+//     "title": "`${r.title}`.toString()",
+//     "prixTotal": "document.getElementById(`${r.id}`).value*`${r.prix}`",
+//     "quantity": "document.getElementById(`${r.id}`).value"
+//    };
+//    products.push(produit);
+
+
+console.log(data)
+
+}
+console.log("i=="+i);
+    // Setting innerHTML as tab variable
+    //,         ${r.title}
+    document.getElementById("ResionsTable").innerHTML = tab;
+}
+
+
+
 function show(data) {
     let tab =
         `<tr>
@@ -176,6 +254,10 @@ console.log("i=="+i);
     //,         ${r.title}
     document.getElementById("employees").innerHTML = tab;
 }
+
+
+
+
 let products = [];
 
 function quantityChanged(
@@ -703,6 +785,24 @@ console.log("let see products ");
 
 
 // Delet elt from Table
+// Regions
+function TestRegions(x) {
+
+    var requestOptions = {
+        method: 'DELETE',
+        redirect: 'follow'
+    };
+
+    fetch(`https://resgons4api-generator.herokuapp.com/api/tutorials/${x}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    location.reload();
+    // alert(`item No ${x} removed`);
+    alert("تم الحذف بنجاح");
+}
+
+// Products
 function Test(x) {
 
     // var rows = document.getElementById('employees')
@@ -725,7 +825,9 @@ function Test(x) {
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
     location.reload();
-    alert(`item No ${x} removed`);
+    // alert(`item No ${x} removed`);
+    alert("تم الحذف بنجاح");
+
 }
 
 
@@ -996,4 +1098,10 @@ function fillProductsDynamicly() {
        }
 
 
+}
+
+
+
+function  Reinitialiser (){
+    location.reload();
 }

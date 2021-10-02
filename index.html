@@ -393,6 +393,7 @@ padding-top: 50px; */
 
 
     <button class="collapsible">المنطقة و المنتوجات</button>
+
     <div class="content">
 
 
@@ -402,20 +403,34 @@ padding-top: 50px; */
 
       <div dir="auto" >
         <select class="form-control js-example-basic-single"   id="op1">
-         <option  selected="selected">المنطقة</option>
+         <option  selected="selected">المنطقة </option>
         </select>
      </div>
      <br>
 
+     <div  class="button_container" style="margin-top: 10px !important;">
+      <button onclick="Reinitialiser()" class="btn" 
+      style="white-space: nowrap; height: min-content; font-size: 15px;
+       width: min-content; margin-top: -10px !important;">
+        <span>إعادة تعيين البيانات</span>
+      </button>
+    </div>
+    <br>
+    
         <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status" 
             id="loading">
-              <span class="sr-only">Loading...</span>
+              <span class="sr-only">جار التحميل...</span>
             </div>
           </div>
           
+
+
+
           <!-- table for showing data -->
         
+
+          
           <table
             id="employees"
             cellspacing="0"
@@ -423,7 +438,8 @@ padding-top: 50px; */
             style="border-collapse: collapse; 
             font-size: 10px;
                         text-align: center;
-                        width: max-content;
+                        /* width: max-content; */
+                        width: 100%;
             /* margin: 100px; */
             "
           ></table>
@@ -1059,6 +1075,7 @@ padding-top: 50px; */
       <button onclick="myFunction2()" class="btn">
         <span> تحميل pdf </span>
       </button>
+      <br><br><br><br><br><br>
     </div>
 
 
@@ -1596,10 +1613,16 @@ hidden
 
 
 </div>
-<br><br><br><br><br><br><br><br><br>
+<!-- <br><br><br><br><br><br><br><br><br> -->
 
 <!-- Second Tab -->
 <div id="Paris" class="tabcontent">
+
+
+
+
+  
+
     <div style=" width: 300px">
         <input
           style="width: 300px; height: 100px"
@@ -1631,7 +1654,17 @@ hidden
         onclick="addProduct2API()"
       /> -->
         <!-- <input type="hidden" id="QTYIn6" value=" &nbsp; ................" /> -->
+       <br><br>
+      
+      
+      
       </div>
+
+
+    
+
+
+
 
   
 </div>
@@ -1640,7 +1673,10 @@ hidden
 
 <!-- Third Tab -->
 <div id="Tokyo" class="tabcontent">
- 
+
+
+
+
   <div style=" width: 300px">
     <input
       style="width: 300px; height: 100px"
@@ -1665,8 +1701,54 @@ hidden
     onclick="addProduct2API()"
   /> -->
     <!-- <input type="hidden" id="QTYIn6" value=" &nbsp; ................" /> -->
-  </div>
 
+
+   <br><br>
+<!-- Table for deleting Areas -->
+<button class="collapsible" onclick="getapiRegions()">حذف منطقة</button>
+          
+<div class="content">
+
+
+
+
+  <br>     <br>
+
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status" 
+        id="loadingRegions">
+          <span class="sr-only">جار التحميل...</span>
+        </div>
+      </div>
+      
+      <!-- table for showing data -->
+    
+      <table
+        id="ResionsTable"
+        cellspacing="0"
+        rules="all"
+        style="border-collapse: collapse; 
+        font-size:17px;
+                    text-align: center;
+                    /* width: max-content; */
+                    width: 100%;
+        /* margin: 100px; */
+        "
+      ></table>
+      <br /><br /><br /><br /><br><br><br><br><br><br><br><br><br>
+      <!-- <input type="button" class="InputTypeBtn" value="
+        التاكيد على الاختيارات
+        " onclick="GetSelected()" /> -->
+      <!-- <div  class="button_container">
+        <button onclick="GetSelected()" class="btn">
+          <span>    التاكيد على الاختيارات </span>
+        </button>
+      </div> -->
+
+</div>
+<br /><br /><br /><br /><br><br><br><br>
+  </div>
+  <br /><br /><br /><br />
 
 </div>
 
