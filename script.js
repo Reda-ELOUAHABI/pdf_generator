@@ -653,6 +653,28 @@ function myFunction2() {
 // Get selected item from products table
 function GetSelected() {
 
+
+        //Reference the Table.
+        var grid = document.getElementById("employees");
+
+        //Reference the CheckBoxes in Table.
+        var checkBoxes = grid.getElementsByTagName("INPUT");
+        var message = "Id        title      Price\n";
+    
+    
+        // Area
+        // var AreaValue = document.getElementById("AreaValue");
+        // var area = document.getElementById("area");
+        // area.innerHTML = ' &nbsp;' + "ajajjajjajaoqoqoqomma" + '&nbsp;';
+    
+            var select = document.getElementById('op1');
+        var AreaValue = select.options[select.selectedIndex];
+         console.log(AreaValue); 
+                // Area
+                // var AreaValue = document.getElementById("op1");
+                 var area = document.getElementById("area");
+                area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
+
 console.log("let see products ");
     // products.forEach(car => {
         dataProduit4PDF.forEach(car => {
@@ -672,26 +694,7 @@ console.log("let see products ");
     //         alert(this.rowIndex);
     //     }
     // }
-    //Reference the Table.
-    var grid = document.getElementById("employees");
 
-    //Reference the CheckBoxes in Table.
-    var checkBoxes = grid.getElementsByTagName("INPUT");
-    var message = "Id        title      Price\n";
-
-
-    // Area
-    // var AreaValue = document.getElementById("AreaValue");
-    // var area = document.getElementById("area");
-    // area.innerHTML = ' &nbsp;' + "ajajjajjajaoqoqoqomma" + '&nbsp;';
-
-        var select = document.getElementById('op1');
-    var AreaValue = select.options[select.selectedIndex];
-    // console.log(AreaValue); 
-            // Area
-            // var AreaValue = document.getElementById("op1");
-             var area = document.getElementById("area");
-            area.innerHTML = ' &nbsp;' + AreaValue.value + '&nbsp;';
 
     //Loop through the CheckBoxes.
     for (var i = 0; i < checkBoxes.length; i++) {
