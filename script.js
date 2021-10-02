@@ -636,9 +636,15 @@ function myFunction2() {
             unit: 'in',
         }
     };
-    html2pdf().set(opt).from(input).save();
-    alert("تم التحميل بنجاح");
+     html2pdf().set(opt).from(input).save();
+    // await new Promise(resolve => setTimeout(resolve, 2000));
+    // after 1.3s reload & alert
+    setTimeout(function() {
+       alert("تم التحميل بنجاح");
     location.reload();
+   }, 1300);
+    // alert("تم التحميل بنجاح");
+    // location.reload();
 
 }
 
