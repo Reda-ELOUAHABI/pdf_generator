@@ -1105,3 +1105,4 @@ function fillProductsDynamicly() {
 function  Reinitialiser (){
     location.reload();
 }
+// <!-- Developed by Reda EL OUAHABI -->
