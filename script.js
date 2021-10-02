@@ -190,7 +190,7 @@ function quantityChanged(
     // );
     totalP.innerHTML= prix*value;
     totalPrice+=prix*value;
-    alert(totalPrice);
+    // alert(totalPrice);
     
     // document.getElementById("TotalCell").innerHTML = totalPrice;
     // console.log("helloo");
@@ -423,6 +423,13 @@ function fillProducts() {
 // let area= document.getElementById('area').innerHTML("coucou");
 function myFunction2() {
 
+
+
+    //  FIll Products Rows
+    // it was causing a problem on data4PDF.shift()
+    // GetSelected();
+
+
     // Row 1
     // MrMme 
     var MrMme = document.getElementById("MrMme");
@@ -505,7 +512,7 @@ function myFunction2() {
     var DateisChecked = document.getElementById("myCheckBox").checked;
 
     if (DateisChecked) {
-        console.log("Input is checked");
+        console.log("Input date is checked");
         1
         2
         3
@@ -522,10 +529,6 @@ function myFunction2() {
 
 
 
-
-    //  FIll Products Rows
-    // it was causing a problem on data4PDF.shift()
-    // GetSelected();
 
 
 
