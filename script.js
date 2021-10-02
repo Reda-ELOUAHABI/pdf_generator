@@ -89,8 +89,11 @@ async function addProduct2API() {
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
-
-    location.reload();
+        setTimeout(function() {
+            alert(Product2API+"\ تمت اضافته بنجاح");
+            location.reload();
+        }, 3000);   
+    
 
 }
 
@@ -123,8 +126,12 @@ async function addRegion2API() {
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
-alert(Region2API+"\ تمت اضافته بنجاح");
+
+        setTimeout(function() {
+            alert(Region2API+"\ تمت اضافته بنجاح");
     location.reload();
+        }, 3000);
+
 
 }
 
