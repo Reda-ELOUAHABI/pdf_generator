@@ -576,13 +576,14 @@ function myFunction2() {
     var Transport = document.getElementById("Transport");
     var transportCell = document.getElementById("transportCell");
     transportCell.innerHTML = ' &nbsp;' + Transport.value + '&nbsp;';
-
+     
+    
 
     // Total 
     var Total = document.getElementById("Total");
     var TotalCell = document.getElementById("TotalCell");
     // TotalCell.innerHTML = ' &nbsp;' + Total.value + '&nbsp;';
-    TotalCell.innerHTML = ' &nbsp;' + totalPrice + '&nbsp;';
+    TotalCell.innerHTML = ' &nbsp;' + `${eval(totalPrice)+eval(Transport.value)}` + '&nbsp;';
 
 
     // Mandoub 
