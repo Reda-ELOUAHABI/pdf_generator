@@ -592,10 +592,10 @@ function myFunction2() {
     MandoubCell.innerHTML = '&nbsp; &nbsp;' + Mandoub.value + '&nbsp;';
 
 
-    // Recepteur 
-    var Recepteur = document.getElementById("Recepteur");
-    var RecepteurCell = document.getElementById("RecepteurCell");
-    RecepteurCell.innerHTML = '&nbsp; &nbsp;' + Recepteur.value + '&nbsp;';
+    // // Recepteur 
+    // var Recepteur = document.getElementById("Recepteur");
+    // var RecepteurCell = document.getElementById("RecepteurCell");
+    // RecepteurCell.innerHTML = '&nbsp; &nbsp;' + Recepteur.value + '&nbsp;';
 
 
     var CurrentDate = document.getElementById("CurrentDate");
@@ -610,7 +610,7 @@ function myFunction2() {
         var today = new Date();
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = '  &nbsp;' + date + ' &nbsp; &nbsp;' + time;
+        var dateTime = '  &nbsp;' + date ;
         CurrentDate.innerHTML = dateTime;
     } else {
         console.log("Input is NOT checked");
