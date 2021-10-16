@@ -1,376 +1,184 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="content-type" content="text/html; charset=UTF8" />
-<title>Facture Pdf</title>
-<link rel="icon" href="./facture.jpg" />
 
-<!-- Style for toggle btn -->
-<link href="./Style.css" rel="stylesheet" />
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF8" />
+  <title>Facture Pdf</title>
+  <link rel="icon" href="./facture.jpg" />
+
+  <!-- Style for toggle btn -->
+  <link href="./Style.css" rel="stylesheet" />
 
 </head>
+
 <body>
 
 
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">فاتورة</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">اضافة منتجات</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">اضافة مناطق</button>
-</div>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">فاتورة</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">اضافة منتجات</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">اضافة مناطق</button>
+  </div>
 
-<!-- First Tab -->
+  <!-- First Tab -->
 
-<div id="London" class="tabcontent" style="height: 150%; display: block;">
+  <div id="London" class="tabcontent" style="height: 150%; display: block;">
 
-  <br><br>
-  <button class="collapsible"> الاعدادات العامة </button>
-  <div class="content">
-    <div style="display: flexbox; padding-top: 50px; padding-bottom: 30px"dir="rtl">
-      <div style="width: 70px"></div>
-      <div>
-        <h3>استعمال تاريخ اليوم</h3>
-        <div
-          style="
+    <br><br>
+    <button class="collapsible"> العنوان </button>
+    <div class="content">
+      <div style="display: flexbox; padding-top: 50px; padding-bottom: 30px" dir="rtl">
+        <div style="width: 70px"></div>
+        <div>
+          <h3>استعمال تاريخ اليوم</h3>
+          <div style="
             width: 40px;
 
             /* margin-top: 50px;
 padding-top: 50px; */
-          "
-        ></div>
-        <label class="switch">
-          <input type="checkbox" id="myCheckBox" checked />
-          <span class="slider round"></span>
-        </label>
-      </div>
-    
-      
+          ">
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="myCheckBox" checked />
+            <span class="slider round"></span>
+          </label>
+        </div>
 
-      <div style="width: 70px"></div>
-      <div>
-        <!-- <h3>
+        <div>
+          <br>
+          <div dir="auto">
+            <select class="form-control js-example-basic-single" id="op1">
+              <option selected="selected">المنطقة </option>
+            </select>
+          </div>
+        </div>
 
-                السياد و السادة
-            </h3> -->
-        <input
-          type="text"
-          id="MrMme"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+        <div style="display: flex;" dir="ltr">
+          <div style="width: 70px"></div>
+          <div>
+            <input type="text" id="MrMme" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
-                السياد و السادة
-           
-                "
-        />
-        <input
-          type="hidden"
-          id="MrMme"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div>
-      <div style="width: 40px"></div>
-      <div>
-        <input
-          type="text"
-          id="Mobile"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
-
-            موبايل
+            السيد/ة
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Mobile"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div>
-      <div style="width: 40px"></div>
-      
-      <!-- Areas can only added by API -->
-      <!-- <div>
-        <input
-          type="text"
-          id="AreaValue"
-          height="20px"
-          style="margin-top: 50px"
-          dir="rtl"
-          placeholder="
+            " />
+            <input type="hidden" id="MrMme" dir="rtl" value=" &nbsp; ................" />
+          </div>
+          <div style="width: 40px"></div>
+          <div>
+            <input type="text" id="Mobile" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
-            المنطقة
-       
-            "
-        />
-        <input
-          type="hidden"
-          id="AreaValue"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div> -->
+        موبايل
+   
+        " />
+            <input type="hidden" id="Mobile" dir="rtl" value=" &nbsp; ................" />
+          </div>
+        </div>
 
-      <div style="width: 70px"></div>
-      <div>
-        <input
-          type="text"
-          id="Section"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+
+        <div style="display: flex;" dir="ltr">
+
+          <div style="width: 40px"></div>
+          <div style="width: 70px"></div>
+          <div>
+            <input type="text" id="Section" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
             قطعة
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Section"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div>
-    
-      <div style="width: 70px"></div>
-      <div>
-        <input
-          type="text"
-          id="Rue"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+            " />
+            <input type="hidden" id="Section" dir="rtl" value=" &nbsp; ................" />
+          </div>
+
+          <div style="width: 70px"></div>
+          <div>
+            <input type="text" id="Rue" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
             شارع
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Rue"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div>
+            " />
+            <input type="hidden" id="Rue" dir="rtl" value=" &nbsp; ................" />
+          </div>
+        </div>
 
-      <div style="width: 40px"></div>
-      <div>
-        <input
-          type="text"
-          id="Jada"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+        <div style="display: flex;" dir="ltr">
+
+          <div style="width: 70px"></div>
+          <div>
+            <input type="text" id="Jada" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
             جادة
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Jada"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div>
-      <div style="width: 40px"></div>
-      <div>
-        <input
-          type="text"
-          id="Home"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+            " />
+            <input type="hidden" id="Jada" dir="rtl" value=" &nbsp; ................" />
+          </div>
+          <div style="width: 40px"></div>
+          <div>
+            <input type="text" id="Home" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
             منزل
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Home"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div>
+            " />
+            <input type="hidden" id="Home" dir="rtl" value=" &nbsp; ................" />
+          </div>
+        </div>
 
-      <div style="width: 40px"></div>
-      <div>
-        <input
-          type="text"
-          id="Dor"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+
+
+        <div style="display: flex;" dir="ltr">
+          <div style="width: 70px"></div>
+          <div>
+            <input type="text" id="Dor" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
             دور
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Dor"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-      </div>
+            " />
+            <input type="hidden" id="Dor" dir="rtl" value=" &nbsp; ................" />
+          </div>
 
-      <div style="width: 40px"></div>
-      <div>
-        <input
-          type="text"
-          id="Appartement"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+          <div style="width: 40px"></div>
+          <div>
+            <input type="text" id="Appartement" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr"
+              placeholder="
 
             شقة
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Appartement"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-        <!-- <br><br> -->
-        <div>
-          <input
-          type="text"
-          id="Transport"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+            " />
+            <input type="hidden" id="Appartement" dir="rtl" value=" &nbsp; ................" />
+          </div>
+        </div>
+
+
+        <div style="display: flex;" dir="ltr">
+          <div style="width: 70px"></div>
+          <div>
+            <input type="text" id="Transport" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr"
+              placeholder="
 
           التوصبل
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Transport"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-         
-        <!-- <h3>التوصبل</h3>
-          <input
-            type="text"
-            height="20px"
-            id="Transport"
-            value=" &nbsp; ................"
-          /> -->
-        </div>
-  
-        <!-- <div style="width: 40px"></div>
-        <div>
-          <input
-          type="text"
-          id="Total"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
-
-          المجموع
-       
-            "
-        />
-        <input
-          type="hidden"
-          id="Total"
-          dir="rtl"
-          value=" &nbsp; ................"
-        /> -->
-         
-          <!-- <h3>المجموع</h3>
-          <input
-            type="text"
-            height="20px"
-            id="Total"
-            value=" &nbsp; ................"
-          /> -->
-        <!-- </div> -->
-        <div style="width: 40px"></div>
-        <div>
-          <input
-          type="text"
-          id="Mandoub"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
+            " />
+            <input type="hidden" id="Transport" dir="rtl" value=" &nbsp; ................" />
+          </div>
+          <div style="width: 40px"></div>
+          <div>
+            <input type="text" id="Mandoub" height="20px" style="margin-top: 20px;width: 113px;" dir="ltr" placeholder="
 
           المندوب
        
-            "
-        />
-        <input
-          type="hidden"
-          id="Mandoub"
-          dir="rtl"
-          value=" &nbsp; ................"
-        />
-
-          <!-- <h3>المندوب</h3>
-          <input
-            type="text"
-            height="20px"
-            id="Mandoub"
-            value=" &nbsp; ................"
-          /> -->
+            " />
+            <input type="hidden" id="Mandoub" dir="rtl" value=" &nbsp; ................" />
+          </div>
         </div>
-  
-        <div style="width: 40px"></div>
-        <!-- <div> -->
-          <!-- <input
-          type="text"
-          id="Recepteur"
-          height="20px"
-          style="margin-top: 20px"
-          dir="rtl"
-          placeholder="
 
-          اسم المستلم
-       
-            "
-        />
-        <input
-          type="hidden"
-          id="Recepteur"
-          dir="rtl"
-          value=" &nbsp; ................"
-        /> -->
-          <!-- <h3>اسم المستلم</h3>
-          <input
-            type="text"
-            height="20px"
-            id="Recepteur"
-            value=" &nbsp; ................"
-          /> -->
-        <!-- </div> -->
-  
         <div style="width: 40px"></div>
-  
+        <div style="width: 40px"></div>
+
       </div>
     </div>
 
 
-  </div>
-<br><br>
+  
+  <br><br>
 
 
 
@@ -382,60 +190,40 @@ padding-top: 50px; */
 
 
 
+  <button class="collapsible">الطلب</button>
+
+  <div class="content">
 
 
 
 
+    <br>
 
 
+    <br>
 
-
-
-
-    <button class="collapsible">المنطقة و المنتوجات</button>
-
-    <div class="content">
-
-
-
-
-      <br>
-
-      <div dir="auto" >
-        <select class="form-control js-example-basic-single"   id="op1">
-         <option  selected="selected">المنطقة </option>
-        </select>
-     </div>
-     <br>
-
-     <div  class="button_container" style="margin-top: 10px !important;">
-      <button onclick="Reinitialiser()" class="btn" 
-      style="white-space: nowrap; height: min-content; font-size: 15px;
+    <div class="button_container" style="margin-top: 10px !important;">
+      <button onclick="Reinitialiser()" class="btn" style="white-space: nowrap; height: min-content; font-size: 15px;
        width: min-content; margin-top: -10px !important;">
         <span>إعادة تعيين البيانات</span>
       </button>
     </div>
     <br>
-    
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status" 
-            id="loading">
-              <span class="sr-only">جار التحميل...</span>
-            </div>
-          </div>
-          
+
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status" id="loading">
+        <span class="sr-only">جار التحميل...</span>
+      </div>
+    </div>
 
 
 
-          <!-- table for showing data -->
-        
 
-          
-          <table
-            id="employees"
-            cellspacing="0"
-            rules="all"
-            style="border-collapse: collapse; 
+    <!-- table for showing data -->
+
+
+
+    <table id="employees" cellspacing="0" rules="all" style="border-collapse: collapse; 
             font-size: 10px;
             /* border-radius: 1em;
     overflow: hidden; */
@@ -443,650 +231,357 @@ padding-top: 50px; */
                         /* width: max-content; */
                         width: 100%;
             /* margin: 100px; */
-            "
-          ></table>
-          <br /><br /><br /><br />
-          <!-- <input type="button" class="InputTypeBtn" value="
+            "></table>
+    <br /><br /><br /><br />
+    <!-- <input type="button" class="InputTypeBtn" value="
             التاكيد على الاختيارات
             " onclick="GetSelected()" /> -->
-          <!-- <div  class="button_container">
+    <!-- <div  class="button_container">
             <button onclick="GetSelected()" class="btn">
               <span>    التاكيد على الاختيارات </span>
             </button>
           </div> -->
 
-    </div>
-
- 
+  </div>
 
 
-    <div hidden>
-      <button class="collapsible">Open Table Rows</button>
-      <div class="content">
-        <br><br>
-  
-        <!-- <input
+
+
+  <div hidden>
+    <button class="collapsible">Open Table Rows</button>
+    <div class="content">
+      <br><br>
+
+      <!-- <input
         type="button"
         class="InputTypeBtn"
         value="Add those filled product"
         onclick="fillProducts()"
       /> -->
-  
+
       <div class="button_container">
         <button onclick="fillProducts()" class="btn">
-          <span>   اضافة هاته المنتوجات الى PDF </span>
+          <span> اضافة هاته المنتوجات الى PDF </span>
         </button>
       </div>
-  
+
       <br><br><br>
-  
-        <!-- Row 1 Tabale -->
-        <!-- <h4 style="text-align: center">Row 1</h4> -->
-  
-        <button class="collapsible">Row 1</button>
+
+      <!-- Row 1 Tabale -->
+      <!-- <h4 style="text-align: center">Row 1</h4> -->
+
+      <button class="collapsible">Row 1</button>
       <div class="content">
-  
+
         <div style="display: bloc; padding-top: 50px" dir="rtl">
           <div style="width: 70px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="TotalAmountFilsIn1"
-              placeholder="TotalAmountFils"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountFilsIn1"
-              value=" &nbsp; ................"
-            />
-            <input
-              type="text"
-              id="TotalAmountKDIn1"
-              placeholder="TotalAmountKD"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountKDIn1"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="TotalAmountFilsIn1" placeholder="TotalAmountFils" />
+            <input type="hidden" id="TotalAmountFilsIn1" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn1" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn1" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="UnitPriceFilsIn1"
-              placeholder="UnitPriceFilsIn1"
-            />
-            <input
-              type="hidden"
-              id="UnitPriceFilsIn1"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="UnitPriceFilsIn1" placeholder="UnitPriceFilsIn1" />
+            <input type="hidden" id="UnitPriceFilsIn1" value=" &nbsp; ................" />
             <input type="text" id="UnitPriceKDIn1" placeholder="UnitPriceKD" />
-            <input
-              type="hidden"
-              id="UnitPriceKDIn1"
-              value=" &nbsp; ................"
-            />
+            <input type="hidden" id="UnitPriceKDIn1" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="margin-top: 30px">
-            <input
-              type="text"
-              id="QTYIn1"
-              placeholder="
-                  الكمية"
-            />
+            <input type="text" id="QTYIn1" placeholder="
+                  الكمية" />
             <input type="hidden" id="QTYIn1" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div dir="rtl" style="width: 390px">
-            <input
-              style="width: 490px; height: 100px"
-              type="text"
-              id="detailsIn1"
-              placeholder="
+            <input style="width: 490px; height: 100px" type="text" id="detailsIn1" placeholder="
                   
                   التفاصيل
-                  "
-            />
-            <input
-              type="hidden"
-              id="detailsIn1"
-              value=" &nbsp; ................"
-            />
+                  " />
+            <input type="hidden" id="detailsIn1" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
         </div>
-  
+
       </div>
-  
-        <!-- Row 2 Table -->
-  
-        <!-- <h4 style="text-align: center">Row 2</h4> -->
-  
-        <button class="collapsible">Row 2</button>
+
+      <!-- Row 2 Table -->
+
+      <!-- <h4 style="text-align: center">Row 2</h4> -->
+
+      <button class="collapsible">Row 2</button>
       <div class="content">
         <div style="display: bloc; padding-top: 50px" dir="rtl">
           <div style="width: 70px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="TotalAmountFilsIn2"
-              placeholder="TotalAmountFils2"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountFilsIn2"
-              value=" &nbsp; ................"
-            />
-            <input
-              type="text"
-              id="TotalAmountKDIn2"
-              placeholder="TotalAmountKD"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountKDIn2"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="TotalAmountFilsIn2" placeholder="TotalAmountFils2" />
+            <input type="hidden" id="TotalAmountFilsIn2" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn2" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn2" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="UnitPriceFilsIn2"
-              placeholder="UnitPriceFilsIn2"
-            />
-            <input
-              type="hidden"
-              id="UnitPriceFilsIn2"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="UnitPriceFilsIn2" placeholder="UnitPriceFilsIn2" />
+            <input type="hidden" id="UnitPriceFilsIn2" value=" &nbsp; ................" />
             <input type="text" id="UnitPriceKDIn2" placeholder="UnitPriceKD" />
-            <input
-              type="hidden"
-              id="UnitPriceKDIn2"
-              value=" &nbsp; ................"
-            />
+            <input type="hidden" id="UnitPriceKDIn2" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="margin-top: 30px">
-            <input
-              type="text"
-              id="QTYIn2"
-              placeholder="
-              الكمية"
-            />
+            <input type="text" id="QTYIn2" placeholder="
+              الكمية" />
             <input type="hidden" id="QTYIn2" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div dir="rtl" style="width: 390px">
-            <input
-              style="width: 490px; height: 100px"
-              type="text"
-              id="detailsIn2"
-              placeholder="
+            <input style="width: 490px; height: 100px" type="text" id="detailsIn2" placeholder="
               
               التفاصيل
-              "
-            />
-            <input
-              type="hidden"
-              id="detailsIn2"
-              value=" &nbsp; ................"
-            />
+              " />
+            <input type="hidden" id="detailsIn2" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
         </div>
-  
+
       </div>
-        <!-- Row 3 Table -->
-  
-        <!-- <h4 style="text-align: center">Row 3</h4> -->
-  
-        <button class="collapsible">Row 3</button>
+      <!-- Row 3 Table -->
+
+      <!-- <h4 style="text-align: center">Row 3</h4> -->
+
+      <button class="collapsible">Row 3</button>
       <div class="content">
         <div style="display: bloc; padding-top: 50px" dir="rtl">
           <div style="width: 70px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="TotalAmountFilsIn3"
-              placeholder="TotalAmountFils3"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountFilsIn3"
-              value=" &nbsp; ................"
-            />
-            <input
-              type="text"
-              id="TotalAmountKDIn3"
-              placeholder="TotalAmountKD"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountKDIn3"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="TotalAmountFilsIn3" placeholder="TotalAmountFils3" />
+            <input type="hidden" id="TotalAmountFilsIn3" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn3" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn3" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="UnitPriceFilsIn3"
-              placeholder="UnitPriceFilsIn3"
-            />
-            <input
-              type="hidden"
-              id="UnitPriceFilsIn3"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="UnitPriceFilsIn3" placeholder="UnitPriceFilsIn3" />
+            <input type="hidden" id="UnitPriceFilsIn3" value=" &nbsp; ................" />
             <input type="text" id="UnitPriceKDIn3" placeholder="UnitPriceKD" />
-            <input
-              type="hidden"
-              id="UnitPriceKDIn3"
-              value=" &nbsp; ................"
-            />
+            <input type="hidden" id="UnitPriceKDIn3" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="margin-top: 30px">
-            <input
-              type="text"
-              id="QTYIn3"
-              placeholder="
-              الكمية"
-            />
+            <input type="text" id="QTYIn3" placeholder="
+              الكمية" />
             <input type="hidden" id="QTYIn3" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div dir="rtl" style="width: 390px">
-            <input
-              style="width: 490px; height: 100px"
-              type="text"
-              id="detailsIn3"
-              placeholder="
+            <input style="width: 490px; height: 100px" type="text" id="detailsIn3" placeholder="
               
               التفاصيل
-              "
-            />
-            <input
-              type="hidden"
-              id="detailsIn3"
-              value=" &nbsp; ................"
-            />
+              " />
+            <input type="hidden" id="detailsIn3" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
         </div>
       </div>
-        <!-- Row 4 Table -->
-  
-        <!-- <h4 style="text-align: center">Row 4</h4> -->
-        <button class="collapsible">Row 4</button>
-        <div class="content">
+      <!-- Row 4 Table -->
+
+      <!-- <h4 style="text-align: center">Row 4</h4> -->
+      <button class="collapsible">Row 4</button>
+      <div class="content">
         <div style="display: bloc; padding-top: 50px" dir="rtl">
           <div style="width: 70px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="TotalAmountFilsIn4"
-              placeholder="TotalAmountFils4"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountFilsIn4"
-              value=" &nbsp; ................"
-            />
-            <input
-              type="text"
-              id="TotalAmountKDIn4"
-              placeholder="TotalAmountKD"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountKDIn4"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="TotalAmountFilsIn4" placeholder="TotalAmountFils4" />
+            <input type="hidden" id="TotalAmountFilsIn4" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn4" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn4" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="UnitPriceFilsIn4"
-              placeholder="UnitPriceFilsIn4"
-            />
-            <input
-              type="hidden"
-              id="UnitPriceFilsIn4"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="UnitPriceFilsIn4" placeholder="UnitPriceFilsIn4" />
+            <input type="hidden" id="UnitPriceFilsIn4" value=" &nbsp; ................" />
             <input type="text" id="UnitPriceKDIn4" placeholder="UnitPriceKD" />
-            <input
-              type="hidden"
-              id="UnitPriceKDIn4"
-              value=" &nbsp; ................"
-            />
+            <input type="hidden" id="UnitPriceKDIn4" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="margin-top: 30px">
-            <input
-              type="text"
-              id="QTYIn4"
-              placeholder="
-              الكمية"
-            />
+            <input type="text" id="QTYIn4" placeholder="
+              الكمية" />
             <input type="hidden" id="QTYIn4" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div dir="rtl" style="width: 390px">
-            <input
-              style="width: 490px; height: 100px"
-              type="text"
-              id="detailsIn4"
-              placeholder="
+            <input style="width: 490px; height: 100px" type="text" id="detailsIn4" placeholder="
               
               التفاصيل
-              "
-            />
-            <input
-              type="hidden"
-              id="detailsIn4"
-              value=" &nbsp; ................"
-            />
+              " />
+            <input type="hidden" id="detailsIn4" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
         </div>
-        </div>
-        <!-- Row 5 Table -->
-  
-        <!-- <h4 style="text-align: center">Row 5</h4> -->
-        <button class="collapsible">Row 5</button>
-        <div class="content">
+      </div>
+      <!-- Row 5 Table -->
+
+      <!-- <h4 style="text-align: center">Row 5</h4> -->
+      <button class="collapsible">Row 5</button>
+      <div class="content">
         <div style="display: bloc; padding-top: 50px" dir="rtl">
           <div style="width: 70px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="TotalAmountFilsIn5"
-              placeholder="TotalAmountFils5"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountFilsIn5"
-              value=" &nbsp; ................"
-            />
-            <input
-              type="text"
-              id="TotalAmountKDIn5"
-              placeholder="TotalAmountKD"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountKDIn5"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="TotalAmountFilsIn5" placeholder="TotalAmountFils5" />
+            <input type="hidden" id="TotalAmountFilsIn5" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn5" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn5" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="UnitPriceFilsIn5"
-              placeholder="UnitPriceFilsIn5"
-            />
-            <input
-              type="hidden"
-              id="UnitPriceFilsIn5"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="UnitPriceFilsIn5" placeholder="UnitPriceFilsIn5" />
+            <input type="hidden" id="UnitPriceFilsIn5" value=" &nbsp; ................" />
             <input type="text" id="UnitPriceKDIn5" placeholder="UnitPriceKD" />
-            <input
-              type="hidden"
-              id="UnitPriceKDIn5"
-              value=" &nbsp; ................"
-            />
+            <input type="hidden" id="UnitPriceKDIn5" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="margin-top: 30px">
-            <input
-              type="text"
-              id="QTYIn5"
-              placeholder="
-              الكمية"
-            />
+            <input type="text" id="QTYIn5" placeholder="
+              الكمية" />
             <input type="hidden" id="QTYIn5" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div dir="rtl" style="width: 390px">
-            <input
-              style="width: 490px; height: 100px"
-              type="text"
-              id="detailsIn5"
-              placeholder="
+            <input style="width: 490px; height: 100px" type="text" id="detailsIn5" placeholder="
               
               التفاصيل
-              "
-            />
-            <input
-              type="hidden"
-              id="detailsIn5"
-              value=" &nbsp; ................"
-            />
+              " />
+            <input type="hidden" id="detailsIn5" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
         </div>
-        </div>
-  
-        <!-- Row 6 Table -->
-  
-  
-        
-  
-              <!-- <h4 style="text-align: center">Row 6</h4> -->
-        <button class="collapsible">Row 6</button>
-        <div class="content">
+      </div>
+
+      <!-- Row 6 Table -->
+
+
+
+
+      <!-- <h4 style="text-align: center">Row 6</h4> -->
+      <button class="collapsible">Row 6</button>
+      <div class="content">
         <div style="display: bloc; padding-top: 50px" dir="rtl">
           <div style="width: 70px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="TotalAmountFilsIn6"
-              placeholder="TotalAmountFils6"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountFilsIn6"
-              value=" &nbsp; ................"
-            />
-            <input
-              type="text"
-              id="TotalAmountKDIn6"
-              placeholder="TotalAmountKD"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountKDIn6"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="TotalAmountFilsIn6" placeholder="TotalAmountFils6" />
+            <input type="hidden" id="TotalAmountFilsIn6" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn6" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn6" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="UnitPriceFilsIn6"
-              placeholder="UnitPriceFilsIn6"
-            />
-            <input
-              type="hidden"
-              id="UnitPriceFilsIn6"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="UnitPriceFilsIn6" placeholder="UnitPriceFilsIn6" />
+            <input type="hidden" id="UnitPriceFilsIn6" value=" &nbsp; ................" />
             <input type="text" id="UnitPriceKDIn6" placeholder="UnitPriceKD" />
-            <input
-              type="hidden"
-              id="UnitPriceKDIn6"
-              value=" &nbsp; ................"
-            />
+            <input type="hidden" id="UnitPriceKDIn6" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="margin-top: 30px">
-            <input
-              type="text"
-              id="QTYIn6"
-              placeholder="
-                  الكمية"
-            />
+            <input type="text" id="QTYIn6" placeholder="
+                  الكمية" />
             <input type="hidden" id="QTYIn6" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div dir="rtl" style="width: 390px">
-            <input
-              style="width: 490px; height: 100px"
-              type="text"
-              id="detailsIn6"
-              placeholder="
+            <input style="width: 490px; height: 100px" type="text" id="detailsIn6" placeholder="
                   
                   التفاصيل
-                  "
-            />
-            <input
-              type="hidden"
-              id="detailsIn6"
-              value=" &nbsp; ................"
-            />
+                  " />
+            <input type="hidden" id="detailsIn6" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
         </div>
-        </div>
-        <!-- Row 7 Table -->
-  
-        <!-- <h4 style="text-align: center">Row 7</h4> -->
-        <button class="collapsible">Row 7</button>
-        <div class="content">
+      </div>
+      <!-- Row 7 Table -->
+
+      <!-- <h4 style="text-align: center">Row 7</h4> -->
+      <button class="collapsible">Row 7</button>
+      <div class="content">
         <div style="display: bloc; padding-top: 50px" dir="rtl">
           <div style="width: 70px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="TotalAmountFilsIn7"
-              placeholder="TotalAmountFils7"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountFilsIn7"
-              value=" &nbsp; ................"
-            />
-            <input
-              type="text"
-              id="TotalAmountKDIn7"
-              placeholder="TotalAmountKD"
-            />
-            <input
-              type="hidden"
-              id="TotalAmountKDIn7"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="TotalAmountFilsIn7" placeholder="TotalAmountFils7" />
+            <input type="hidden" id="TotalAmountFilsIn7" value=" &nbsp; ................" />
+            <input type="text" id="TotalAmountKDIn7" placeholder="TotalAmountKD" />
+            <input type="hidden" id="TotalAmountKDIn7" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="width: 190px">
-            <input
-              type="text"
-              id="UnitPriceFilsIn7"
-              placeholder="UnitPriceFilsIn7"
-            />
-            <input
-              type="hidden"
-              id="UnitPriceFilsIn7"
-              value=" &nbsp; ................"
-            />
+            <input type="text" id="UnitPriceFilsIn7" placeholder="UnitPriceFilsIn7" />
+            <input type="hidden" id="UnitPriceFilsIn7" value=" &nbsp; ................" />
             <input type="text" id="UnitPriceKDIn7" placeholder="UnitPriceKD" />
-            <input
-              type="hidden"
-              id="UnitPriceKDIn7"
-              value=" &nbsp; ................"
-            />
+            <input type="hidden" id="UnitPriceKDIn7" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div style="margin-top: 30px">
-            <input
-              type="text"
-              id="QTYIn7"
-              placeholder="
-              الكمية"
-            />
+            <input type="text" id="QTYIn7" placeholder="
+              الكمية" />
             <input type="hidden" id="QTYIn7" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
           <div dir="rtl" style="width: 390px">
-            <input
-              style="width: 490px; height: 100px"
-              type="text"
-              id="detailsIn7"
-              placeholder="
+            <input style="width: 490px; height: 100px" type="text" id="detailsIn7" placeholder="
               
               التفاصيل
-              "
-            />
-            <input
-              type="hidden"
-              id="detailsIn7"
-              value=" &nbsp; ................"
-            />
+              " />
+            <input type="hidden" id="detailsIn7" value=" &nbsp; ................" />
           </div>
           <div style="width: 40px"></div>
         </div>
-        </div>
-  
-  
-          
-  
-  
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  
-  
-  
-  
-  <br><br><br>
-  
-  
-  
-  <br /><br /><br />
-  
-  
       </div>
-  
-  </div>
+
+
+
+
+
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
       <br><br><br>
 
 
 
-      <div  class="button_container">
-        <button onclick="GetSelected()" class="btn">
-          <span>    التاكيد على الاختيارات </span>
-        </button>
-      </div>
-      <br>
 
-    <div class="button_container">
-      <button onclick="myFunction2()" class="btn">
-        <span> تحميل pdf </span>
-      </button>
-      <br><br><br><br><br><br>
+      <br><br><br>
+
+
+
+      <br /><br /><br />
+
+
     </div>
 
-
-    <br><br><br>
-
-
+  </div>
+  <br><br><br>
 
 
 
+  <div class="button_container">
+    <button onclick="GetSelected()" class="btn">
+      <span> التاكيد على الاختيارات </span>
+    </button>
+  </div>
+  <br>
+
+  <div class="button_container">
+    <button onclick="myFunction2()" class="btn">
+      <span> تحميل pdf </span>
+    </button>
+    <br><br><br><br><br><br>
+  </div>
+
+
+  <br><br><br>
 
 
 
@@ -1096,75 +591,61 @@ padding-top: 50px; */
 
 
 
-<!-- Pdf Form Preview  hidden -->
-<div
-hidden
- >
+
+
+
+
+
+  <!-- Pdf Form Preview  hidden -->
+  <div hidden>
     <button class="collapsible">Pdf Preview</button>
     <div class="content">
-      <div
-        id="divIdToPrint"
-        style="
+      <div id="divIdToPrint" style="
           border: 1.5px solid rgb(77, 74, 228);
           /* the right dimensions */
           /* width: calc(147.83*3.5px); */
           /* height: 196px; */
-        "
-      >
-        <div
-          style="height: calc(0.7px); background-color: rgb(77, 74, 228)"
-        ></div>
-        <div
-          style="
+        ">
+        <div style="height: calc(0.7px); background-color: rgb(77, 74, 228)"></div>
+        <div style="
             border: calc(1 * 4px) solid rgb(77, 74, 228);
             border-bottom-right-radius: 14em 14em;
             border-bottom-left-radius: 14em 14em;
-          "
-        >
-          <h1
-            style="
+          ">
+          <h1 style="
               font-size: calc(30px);
               font-family: titleFont;
               text-align: center;
-            "
-          >
+            ">
             شركه
-            <span
-              style="
+            <span style="
                 color: aliceblue;
                 background-color: blue;
                 border-radius: 10px;
-              "
-            >
+              ">
               العربيه
             </span>
 
             <!-- للاثاث و المفروشات -->
             للمفروشات والأثاث المعدني
-         
+
           </h1>
-          <p
-            style="
+          <p style="
               font-size: calc(4 * 4px);
               margin-top: -20px;
               text-align: center;
-            "
-          >
+            ">
             الجهراء الصناعيه - مقابل سوق السرحان رقم (3)
             <br />
             وكيل معتمد لدى شركه البغلي لصناعات الاسفنج
           </p>
         </div>
         <div class="marginLR10" style="display: flex">
-          <p
-            dir="rtl"
-            style="/* position: relative; */ text-align: right; font-size: 15px"
-          >
+          <p dir="rtl" style="/* position: relative; */ text-align: right; font-size: 15px">
             التاريخ &nbsp;
             <span id="CurrentDate"> : ................... </span>
           </p>
-          <div
-            style="
+          <div style="
               margin-right: 80px;
               margin-top: 8px;
               height: 28px;
@@ -1172,51 +653,40 @@ hidden
               border-radius: 10px;
               border: 1px solid rgb(86, 86, 226);
               text-align: center;
-            "
-          >
-            <p
-              style="
+            ">
+            <p style="
                 color: rgb(86, 86, 226);
                 margin-top: 6px;
                 /* text-align: center; */
                 font-size: 16px;
                 font-weight: 1000;
-              "
-            >
+              ">
               فاتورة &nbsp; نقدا
             </p>
           </div>
         </div>
         <div class="marginLR10" style="display: flex; margin-top: -10px">
-          <p
-            dir="rtl"
-            style="/* position: relative; */ text-align: right; font-size: 16px"
-          >
-          السيد/ة &nbsp;
+          <p dir="rtl" style="/* position: relative; */ text-align: right; font-size: 16px">
+            السيد/ة &nbsp;
 
             <span id="MrMmeCell"> : &nbsp; ............... </span>
           </p>
           <div style="width: 78px"></div>
           <img src="./mobile.png" height="20px" alt="mobile" style="margin-top: 10px;" />
-          <p
-            dir="rtl"
-            style="/* position: relative; */ text-align: right; font-size: 16px"
-          >
+          <p dir="rtl" style="/* position: relative; */ text-align: right; font-size: 16px">
             موبايل &nbsp;
             <span id="mobileCell"> : ........................... </span>
           </p>
         </div>
 
         <div class="marginLR10">
-          <table
-            style="
+          <table style="
               width: 100%;
               font-size: 12px;
               border-collapse: collapse;
               border-radius: 1em;
               overflow: hidden;
-            "
-          >
+            ">
             <tr>
               <th>المنطقة</th>
               <th>قطعة</th>
@@ -1245,9 +715,7 @@ hidden
           }
         </style>
         <div class="marginLR10">
-          <table
-            dir="ltr"
-            style="
+          <table dir="ltr" style="
               width: 100%;
               
               font-size: 12px;
@@ -1255,8 +723,7 @@ hidden
               /* border-radius: 100em;  */
               border-radius: 1em;
     overflow: hidden;
-            "
-          >
+            ">
             <tbody dir="ltr">
               <tr>
                 <td rowspan="2" style="width: 32.9086%">
@@ -1497,9 +964,8 @@ hidden
               <tr>
                 <td colspan="4" style="width: 71.1697%" dir="rtl">
                   <span style="text-align: right"> المجموع د.ك </span>
-                  <span id="TotalCell" style="text-align: center"
-                    >....................................................................</span
-                  >
+                  <span id="TotalCell"
+                    style="text-align: center">....................................................................</span>
                   <span style="text-align: left"> Total K.d </span>
                 </td>
                 <td style="width: 15.1705%"><br /></td>
@@ -1509,43 +975,36 @@ hidden
           </table>
         </div>
 
-        <div
-          style="
+        <div style="
             margin-right: 20px;
             margin-top: 18px;
             height: 68px;
             width: 95%;
             border-radius: 10rem 10rem;
             border: 1px solid rgb(86, 86, 226);
-          "
-        >
-          <p
-            style="
+          ">
+          <p style="
               color: rgb(86, 86, 226);
               margin-top: 2px;
               text-align: center;
               font-size: 16px;
               font-weight: 1000;
-            "
-          >
+            ">
             البضاعه المباعه لا ترد ولا تستبدل ما على السهو والخطا
           </p>
 
           <div class="marginLR10" style="display: flex; margin-top: -20px">
             <div style="width: 38px"></div>
-            <p
-              dir="rtl"
-              style="
+            <p dir="rtl" style="
                 /* position: relative; */
                 text-align: center;
                 font-size: 16px;
-              "
-            >
+              ">
               المندوب
               <span id="MandoubCell"> : .................. </span>
             </p>
             <div style="width: 38px"></div>
-            
+
             <!-- <p
               dir="rtl"
               style="
@@ -1573,8 +1032,7 @@ hidden
 
         <div style="height: 10px"></div>
 
-        <div
-          style="
+        <div style="
             color: white;
             background-color: rgb(46, 46, 243);
             /* height: 68px; */
@@ -1584,17 +1042,14 @@ hidden
             border: calc(1 * 4px) solid rgb(77, 74, 228);
             border-top-right-radius: 15em 15em;
             border-top-left-radius: 15em 15em;
-          "
-        >
+          ">
           <h1 style="font-size: 15px; white-space: nowrap;">تابع صفحتنا على الانستغرام والسناب ليصلك كل جديد</h1>
-          <div
-            style="
+          <div style="
               display: flex;
               text-align: center;
               /* margin-left: 210px ; */
               margin-right: 130px;
-            "
-          >
+            ">
             <div class="marginLR10" style="display: flex; text-align: center">
               <img src="./instagram.png" height="40px" />
               <p>M3aqq</p>
@@ -1613,44 +1068,34 @@ hidden
         </div>
       </div>
     </div>
-</div>
-  
+  </div>
 
 
 
 
-</div>
-<!-- <br><br><br><br><br><br><br><br><br> -->
 
-<!-- Second Tab -->
-<div id="Paris" class="tabcontent">
+  </div>
+  <!-- <br><br><br><br><br><br><br><br><br> -->
+
+  <!-- Second Tab -->
+  <div id="Paris" class="tabcontent">
 
 
 
 
-  
+
 
     <div style=" width: 300px">
-        <input
-          style="width: 300px; height: 100px"
-          type="text"
-          id="ProductAPI"
-          placeholder="
+      <input style="width: 300px; height: 100px" type="text" id="ProductAPI" placeholder="
         اسم المنتج
-        "
-        />
-        <input
-        type="number"
-        id="PrixAPI"
-        style=" height: 30px;"
-        placeholder="
+        " />
+      <input type="number" id="PrixAPI" style=" height: 30px;" placeholder="
        الثمن بالدينار
-      "
-      />
+      " />
 
       <div class="button_container">
         <button onclick="addProduct2API()" class="btn">
-          <span>   اضافة المنتج </span>
+          <span> اضافة المنتج </span>
         </button>
       </div>
 
@@ -1660,105 +1105,94 @@ hidden
         value="أضافة المنتج"
         onclick="addProduct2API()"
       /> -->
-        <!-- <input type="hidden" id="QTYIn6" value=" &nbsp; ................" /> -->
-       <br><br>
-      
-      
-      
-      </div>
+      <!-- <input type="hidden" id="QTYIn6" value=" &nbsp; ................" /> -->
+      <br><br>
 
 
-    
+
+    </div>
 
 
 
 
-  
-</div>
-
-
-
-<!-- Third Tab -->
-<div id="Tokyo" class="tabcontent">
 
 
 
 
-  <div style=" width: 300px">
-    <input
-      style="width: 300px; height: 100px"
-      type="text"
-      id="RegionAPI"
-      placeholder="
-    اسم المنطقة
-    "
-    />
-
-
-  <div class="button_container">
-    <button onclick="addRegion2API()" class="btn">
-      <span>   اضافة المنطقة </span>
-    </button>
   </div>
 
-  <!-- <input
+
+
+  <!-- Third Tab -->
+  <div id="Tokyo" class="tabcontent">
+
+
+
+
+    <div style=" width: 300px">
+      <input style="width: 300px; height: 100px" type="text" id="RegionAPI" placeholder="
+    اسم المنطقة
+    " />
+
+
+      <div class="button_container">
+        <button onclick="addRegion2API()" class="btn">
+          <span> اضافة المنطقة </span>
+        </button>
+      </div>
+
+      <!-- <input
     type="button"
     class="InputTypeBtn"
     value="أضافة المنتج"
     onclick="addProduct2API()"
   /> -->
-    <!-- <input type="hidden" id="QTYIn6" value=" &nbsp; ................" /> -->
+      <!-- <input type="hidden" id="QTYIn6" value=" &nbsp; ................" /> -->
 
 
-   <br><br>
-<!-- Table for deleting Areas -->
-<button class="collapsible" onclick="getapiRegions()">حذف منطقة</button>
-          
-<div class="content">
+      <br><br>
+      <!-- Table for deleting Areas -->
+      <button class="collapsible" onclick="getapiRegions()">حذف منطقة</button>
+
+      <div class="content">
 
 
 
 
-  <br>     <br>
+        <br> <br>
 
-    <div class="d-flex justify-content-center">
-        <div class="spinner-border" role="status" 
-        id="loadingRegions">
-          <span class="sr-only">جار التحميل...</span>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status" id="loadingRegions">
+            <span class="sr-only">جار التحميل...</span>
+          </div>
         </div>
-      </div>
-      
-      <!-- table for showing data -->
-    
-      <table
-        id="ResionsTable"
-        cellspacing="0"
-        rules="all"
-        style="border-collapse: collapse; 
+
+        <!-- table for showing data -->
+
+        <table id="ResionsTable" cellspacing="0" rules="all" style="border-collapse: collapse; 
         font-size:17px;
 
                     text-align: center;
                     /* width: max-content; */
                     width: 100%;
         /* margin: 100px; */
-        "
-      ></table>
-      <br /><br /><br /><br /><br><br><br><br><br><br><br><br><br>
-      <!-- <input type="button" class="InputTypeBtn" value="
+        "></table>
+        <br /><br /><br /><br /><br><br><br><br><br><br><br><br><br>
+        <!-- <input type="button" class="InputTypeBtn" value="
         التاكيد على الاختيارات
         " onclick="GetSelected()" /> -->
-      <!-- <div  class="button_container">
+        <!-- <div  class="button_container">
         <button onclick="GetSelected()" class="btn">
           <span>    التاكيد على الاختيارات </span>
         </button>
       </div> -->
 
-</div>
-<br /><br /><br /><br /><br><br><br><br>
+      </div>
+      <br /><br /><br /><br /><br><br><br><br>
+    </div>
+    <br /><br /><br /><br />
+
   </div>
-  <br /><br /><br /><br />
-
-</div>
 
 
 
@@ -1767,26 +1201,26 @@ hidden
 
 
 
-<!-- JS -->
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+  <!-- JS -->
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-<script>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+  <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
@@ -1803,43 +1237,43 @@ document.getElementById("defaultOpen").click();
     }
   </script>
 
-        <!-- Filling DropDownList from API [Reagions] -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function () {
+  <!-- Filling DropDownList from API [Reagions] -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
       $.ajax({
-          url: "https://resgons4api-generator.herokuapp.com/api/tutorials/",
-          datatype: "JSON",
-          type: "Get",
-          success: function (data) {
-              for(var i=0;i<data.length;i++)
-              {
-                  var opt = new Option(data[i].title);
-                  $("#op1").append(opt);
-              }
+        url: "https://resgons4api-generator.herokuapp.com/api/tutorials/",
+        datatype: "JSON",
+        type: "Get",
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            var opt = new Option(data[i].title);
+            $("#op1").append(opt);
           }
+        }
       });
-  });
-</script>
+    });
+  </script>
 
 
-<!-- Search Function -->
-    
+  <!-- Search Function -->
+
   <!-- I choouse Select2 plugin -->
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-      
-      <script>
-        // In your Javascript (external .js resource or <script> tag)
- $(document).ready(function() {
-     $('.js-example-basic-single').select2();
- });
-      </script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function () {
+      $('.js-example-basic-single').select2();
+    });
+  </script>
   <script src="./html2pdf.js"></script>
   <script src="./script.js"></script>
-  
+
 
 </body>
-</html> 
+
+</html>
 
 <!-- Developed by Reda EL OUAHABI -->

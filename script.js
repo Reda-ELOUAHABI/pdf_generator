@@ -203,11 +203,11 @@ function show(data) {
         `<tr>
         
           <th hidden>Id</th>
-          <th style="overflow-wrap: break-word; width:20px;">Title</th>
-          <th>Unity Price</th>
+          <th style="overflow-wrap: break-word; width:35%;">Title</th>
+          <th style="width:10%;">Unity Price</th>
           <th hidden>  checked </th>
-          <th >Quantity </th>
-          <th >Total Price </th>
+          <th style="width:25%;" >Quantity </th>
+          <th style="width:20%;" >Total Price </th>
           <th>Delete</th> 
          </tr>`;
 
@@ -218,13 +218,14 @@ var i=0;
         tab += `<tr> 
           
     <td hidden>${r.id} </td>
-    <td>${r.title}</td>
+    <td style="
+    font-weight: bold;">${r.title}</td>
     <td  >${r.prix}</td> 
        <td hidden>
        <input type="checkbox" />
         </td> 
         <td  >
-         <input type="number" 
+         <input style="width:60%;" type="number" 
          onchange="quantityChanged(
             
              ${r.prix},
@@ -627,6 +628,7 @@ function myFunction2() {
 
 
     const input = document.getElementById('divIdToPrint');
+    // https://ekoopmans.github.io/html2pdf.js/
     // const area= document.getElementById('area').innerHTML("coucou");
     var opt = {
         //   margin:       1,
