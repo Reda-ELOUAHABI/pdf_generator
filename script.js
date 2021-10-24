@@ -893,7 +893,7 @@ function fillProductsDynamicly() {
     var UPFils1 = document.getElementById("UPFils1");
     UPFils1.innerHTML = ' &nbsp;' +    
      (dataProduit4PDF.length===0) ? 
-    000 : 
+    "000": 
     "_____________" + '&nbsp;';
 
     var TAKD1 = document.getElementById("TAKD1");
@@ -907,7 +907,7 @@ function fillProductsDynamicly() {
     TAFils1.innerHTML = ' &nbsp;' + 
     
     (dataProduit4PDF.length===0) ? 
-    000 : 
+    "000": 
     "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
@@ -937,7 +937,7 @@ function fillProductsDynamicly() {
 
     var UPFils2 = document.getElementById("UPFils2");
     UPFils2.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     000 :  "_____________" + '&nbsp;';
+     "000":  "_____________" + '&nbsp;';
 
     var TAKD2 = document.getElementById("TAKD2");
     TAKD2.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -945,7 +945,7 @@ function fillProductsDynamicly() {
 
     var TAFils2 = document.getElementById("TAFils2");
     TAFils2.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    000 : "_____________"  + '&nbsp;';
+    "000": "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -973,7 +973,7 @@ function fillProductsDynamicly() {
 
     var UPFils3 = document.getElementById("UPFils3");
     UPFils3.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     000 :  "_____________" + '&nbsp;';
+     "000":  "_____________" + '&nbsp;';
 
     var TAKD3 = document.getElementById("TAKD3");
     TAKD3.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -981,7 +981,7 @@ function fillProductsDynamicly() {
 
     var TAFils3 = document.getElementById("TAFils3");
     TAFils3.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    000 : "_____________"  + '&nbsp;';
+    "000": "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1005,7 +1005,7 @@ function fillProductsDynamicly() {
 
     var UPFils4 = document.getElementById("UPFils4");
     UPFils4.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     000 :  "_____________" + '&nbsp;';
+     "000":  "_____________" + '&nbsp;';
 
     var TAKD4 = document.getElementById("TAKD4");
     TAKD4.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1013,7 +1013,7 @@ function fillProductsDynamicly() {
 
     var TAFils4 = document.getElementById("TAFils4");
     TAFils4.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    000 : "_____________"  + '&nbsp;';
+    "000": "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1037,7 +1037,7 @@ function fillProductsDynamicly() {
 
     var UPFils5 = document.getElementById("UPFils5");
     UPFils5.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     000 :  "_____________" + '&nbsp;';
+     "000":  "_____________" + '&nbsp;';
 
     var TAKD5 = document.getElementById("TAKD5");
     TAKD5.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1045,7 +1045,7 @@ function fillProductsDynamicly() {
 
     var TAFils5 = document.getElementById("TAFils5");
     TAFils5.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    000 : "_____________"  + '&nbsp;';
+    "000": "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1068,7 +1068,7 @@ function fillProductsDynamicly() {
 
     var UPFils6 = document.getElementById("UPFils6");
     UPFils6.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     000 :  "_____________" + '&nbsp;';
+     "000":  "_____________" + '&nbsp;';
 
     var TAKD6 = document.getElementById("TAKD6");
     TAKD6.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1076,7 +1076,7 @@ function fillProductsDynamicly() {
 
     var TAFils6 = document.getElementById("TAFils6");
     TAFils6.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    000 : "_____________"  + '&nbsp;';
+    "000": "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1100,7 +1100,7 @@ function fillProductsDynamicly() {
    
        var UPFils7 = document.getElementById("UPFils7");
        UPFils7.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-        000 :  "_____________" + '&nbsp;';
+        "000":  "_____________" + '&nbsp;';
    
        var TAKD7 = document.getElementById("TAKD7");
        TAKD7.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1108,7 +1108,7 @@ function fillProductsDynamicly() {
    
        var TAFils7 = document.getElementById("TAFils7");
        TAFils7.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-       000 : "_____________"  + '&nbsp;';
+       "000": "_____________"  + '&nbsp;';
    
        if (dataProduit4PDF.length > 0) {
            console.log("aaa");
