@@ -172,7 +172,6 @@ var i=0;
     <td hidden>${r.id} </td>
     <td>${r.title}</td>
     
-
           <td> <a onclick="TestRegions(${r.id})">🗑️</a> </td>
 </tr>`;
     
@@ -210,30 +209,13 @@ function show(data) {
           <th style="width:20%;" >Total Price </th>
           <th>Delete</th> 
          </tr>`;
-// minus plus btns
-var valueInput=0;
+
 var i=0;
     // Loop to access all rows 
     for (let r of data) {
         // console.log(`r.id :  ${r.id}`) ❌ 
         tab += `<tr> 
-          <style>
-          span {cursor:pointer; }
-		.number{
-			margin:100px;
-		}
-		.minus, .plus{
-		
-			
-			background:#f2f2f2;
-			border-radius:4px;
-			padding:8px 5px 8px 5px;
-			border:1px solid #ddd;
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
-		}
-          </style>
+          
     <td hidden>${r.id} </td>
     <td style="
     font-weight: bold;">${r.title}</td>
@@ -242,14 +224,7 @@ var i=0;
        <input type="checkbox" />
         </td> 
         <td  >
-
-        <div>
-        <span class="minus" style="width:20%;" onclick="(function(){
-            
-            document.getElementById('${r.id}').value=${--valueInput};
-
-        })();return false;">-</span>
-         <input style="width:20%;" type="number" 
+         <input style="width:60%;" type="number" 
          onchange="quantityChanged(
             
              ${r.prix},
@@ -259,47 +234,12 @@ var i=0;
        
              
              )"
-          id="${r.id}"   value="${valueInput}" />
-          <span class="plus" style="width:20%;" onclick="(function(){
-           
-            document.getElementById('${r.id}').value=${++valueInput};;
-
-        })();return false;">+</span>
-          </div>
+          id="${r.id}" style="width:30px;"  value="0" />
           </td>
           <td id="${r.id*777}">${r.prix*0}</td>
-<script>
-function plus(){
-    console.log(11);
-}
-</script>
-
           <td> <a onclick="Test(${r.id})">🗑️</a> </td>
 </tr>`;
     
-
-
-// minus plus btns
-function plus(value){
-    console.log(++value);
-}
-// $(document).ready(function() {
-//     $('.minus').click(function () {
-//         var $input = $(this).parent().find('input');
-//         var count = parseInt($input.val()) - 1;
-//         count = count < 1 ? 1 : count;
-//         $input.val(count);
-//         $input.change();
-//         return false;
-//     });
-//     $('.plus').click(function () {
-//         var $input = $(this).parent().find('input');
-//         $input.val(parseInt($input.val()) + 1);
-//         $input.change();
-//         return false;
-//     });
-// });
-
 i++;
 
 // let produit = {
@@ -331,7 +271,7 @@ function quantityChanged(
     ,id
     //,title
     ){
-        // await new Promise(resolve => setTimeout(resolve, 3000)); 
+    
     // console.log(
     //     id
     // );
@@ -953,7 +893,7 @@ function fillProductsDynamicly() {
     var UPFils1 = document.getElementById("UPFils1");
     UPFils1.innerHTML = ' &nbsp;' +    
      (dataProduit4PDF.length===0) ? 
-    dataProduit4PDF[0].prix*1000 : 
+    000 : 
     "_____________" + '&nbsp;';
 
     var TAKD1 = document.getElementById("TAKD1");
@@ -967,7 +907,7 @@ function fillProductsDynamicly() {
     TAFils1.innerHTML = ' &nbsp;' + 
     
     (dataProduit4PDF.length===0) ? 
-    dataProduit4PDF[0].totalPrix*1000 : 
+    000 : 
     "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
@@ -997,7 +937,7 @@ function fillProductsDynamicly() {
 
     var UPFils2 = document.getElementById("UPFils2");
     UPFils2.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     dataProduit4PDF[0].prix*1000 :  "_____________" + '&nbsp;';
+     000 :  "_____________" + '&nbsp;';
 
     var TAKD2 = document.getElementById("TAKD2");
     TAKD2.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1005,7 +945,7 @@ function fillProductsDynamicly() {
 
     var TAFils2 = document.getElementById("TAFils2");
     TAFils2.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    dataProduit4PDF[0].totalPrix*1000 : "_____________"  + '&nbsp;';
+    000 : "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1033,7 +973,7 @@ function fillProductsDynamicly() {
 
     var UPFils3 = document.getElementById("UPFils3");
     UPFils3.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     dataProduit4PDF[0].prix*1000 :  "_____________" + '&nbsp;';
+     000 :  "_____________" + '&nbsp;';
 
     var TAKD3 = document.getElementById("TAKD3");
     TAKD3.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1041,7 +981,7 @@ function fillProductsDynamicly() {
 
     var TAFils3 = document.getElementById("TAFils3");
     TAFils3.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    dataProduit4PDF[0].totalPrix*1000 : "_____________"  + '&nbsp;';
+    000 : "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1065,7 +1005,7 @@ function fillProductsDynamicly() {
 
     var UPFils4 = document.getElementById("UPFils4");
     UPFils4.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     dataProduit4PDF[0].prix*1000 :  "_____________" + '&nbsp;';
+     000 :  "_____________" + '&nbsp;';
 
     var TAKD4 = document.getElementById("TAKD4");
     TAKD4.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1073,7 +1013,7 @@ function fillProductsDynamicly() {
 
     var TAFils4 = document.getElementById("TAFils4");
     TAFils4.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    dataProduit4PDF[0].totalPrix*1000 : "_____________"  + '&nbsp;';
+    000 : "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1097,7 +1037,7 @@ function fillProductsDynamicly() {
 
     var UPFils5 = document.getElementById("UPFils5");
     UPFils5.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     dataProduit4PDF[0].prix*1000 :  "_____________" + '&nbsp;';
+     000 :  "_____________" + '&nbsp;';
 
     var TAKD5 = document.getElementById("TAKD5");
     TAKD5.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1105,7 +1045,7 @@ function fillProductsDynamicly() {
 
     var TAFils5 = document.getElementById("TAFils5");
     TAFils5.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    dataProduit4PDF[0].totalPrix*1000 : "_____________"  + '&nbsp;';
+    000 : "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1128,7 +1068,7 @@ function fillProductsDynamicly() {
 
     var UPFils6 = document.getElementById("UPFils6");
     UPFils6.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-     dataProduit4PDF[0].prix*1000 :  "_____________" + '&nbsp;';
+     000 :  "_____________" + '&nbsp;';
 
     var TAKD6 = document.getElementById("TAKD6");
     TAKD6.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1136,7 +1076,7 @@ function fillProductsDynamicly() {
 
     var TAFils6 = document.getElementById("TAFils6");
     TAFils6.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-    dataProduit4PDF[0].totalPrix*1000 : "_____________"  + '&nbsp;';
+    000 : "_____________"  + '&nbsp;';
 
     if (dataProduit4PDF.length > 0) {
         console.log("aaa");
@@ -1160,7 +1100,7 @@ function fillProductsDynamicly() {
    
        var UPFils7 = document.getElementById("UPFils7");
        UPFils7.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-        dataProduit4PDF[0].prix*1000 :  "_____________" + '&nbsp;';
+        000 :  "_____________" + '&nbsp;';
    
        var TAKD7 = document.getElementById("TAKD7");
        TAKD7.innerHTML = ' &nbsp;' +     (dataProduit4PDF.length===0) ? 
@@ -1168,7 +1108,7 @@ function fillProductsDynamicly() {
    
        var TAFils7 = document.getElementById("TAFils7");
        TAFils7.innerHTML = ' &nbsp;' +  (dataProduit4PDF.length===0) ? 
-       dataProduit4PDF[0].totalPrix*1000 : "_____________"  + '&nbsp;';
+       000 : "_____________"  + '&nbsp;';
    
        if (dataProduit4PDF.length > 0) {
            console.log("aaa");
