@@ -210,13 +210,30 @@ function show(data) {
           <th style="width:20%;" >Total Price </th>
           <th>Delete</th> 
          </tr>`;
-
+// minus plus btns
+var valueInput=0;
 var i=0;
     // Loop to access all rows 
     for (let r of data) {
         // console.log(`r.id :  ${r.id}`) ❌ 
         tab += `<tr> 
-          
+          <style>
+          span {cursor:pointer; }
+		.number{
+			margin:100px;
+		}
+		.minus, .plus{
+		
+			
+			background:#f2f2f2;
+			border-radius:4px;
+			padding:8px 5px 8px 5px;
+			border:1px solid #ddd;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+		}
+          </style>
     <td hidden>${r.id} </td>
     <td style="
     font-weight: bold;">${r.title}</td>
@@ -225,7 +242,14 @@ var i=0;
        <input type="checkbox" />
         </td> 
         <td  >
-         <input style="width:60%;" type="number" 
+
+        <div>
+        <span class="minus" style="width:20%;" onclick="(function(){
+            
+            document.getElementById('${r.id}').value=${--valueInput};
+
+        })();return false;">-</span>
+         <input style="width:20%;" type="number" 
          onchange="quantityChanged(
             
              ${r.prix},
@@ -235,14 +259,47 @@ var i=0;
        
              
              )"
-          id="${r.id}" style="width:30px;"  value="0" />
+          id="${r.id}"   value="${valueInput}" />
+          <span class="plus" style="width:20%;" onclick="(function(){
+           
+            document.getElementById('${r.id}').value=${++valueInput};;
+
+        })();return false;">+</span>
+          </div>
           </td>
           <td id="${r.id*777}">${r.prix*0}</td>
-
+<script>
+function plus(){
+    console.log(11);
+}
+</script>
 
           <td> <a onclick="Test(${r.id})">🗑️</a> </td>
 </tr>`;
     
+
+
+// minus plus btns
+function plus(value){
+    console.log(++value);
+}
+// $(document).ready(function() {
+//     $('.minus').click(function () {
+//         var $input = $(this).parent().find('input');
+//         var count = parseInt($input.val()) - 1;
+//         count = count < 1 ? 1 : count;
+//         $input.val(count);
+//         $input.change();
+//         return false;
+//     });
+//     $('.plus').click(function () {
+//         var $input = $(this).parent().find('input');
+//         $input.val(parseInt($input.val()) + 1);
+//         $input.change();
+//         return false;
+//     });
+// });
+
 i++;
 
 // let produit = {
@@ -274,7 +331,7 @@ function quantityChanged(
     ,id
     //,title
     ){
-    
+        // await new Promise(resolve => setTimeout(resolve, 3000)); 
     // console.log(
     //     id
     // );
