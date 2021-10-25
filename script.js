@@ -206,6 +206,7 @@ function show(data) {
           <th style="width:10%;">Unity Price</th>
           <th hidden>  checked </th>
           <th style="width:25%;" >Quantity </th>
+          <th style="width:25%;" >Details </th>
           <th style="width:20%;" >Total Price </th>
           <th>Delete</th> 
          </tr>`;
@@ -218,7 +219,7 @@ var i=0;
           
     <td hidden>${r.id} </td>
     <td style="
-    font-weight: bold;">${r.title}</td>
+    font-weight: bold;"> <p id="${r.id*6665}" class="reda" >${r.title}</p></td>
     <td  >${r.prix}</td> 
        <td hidden>
        <input type="checkbox" />
@@ -232,13 +233,35 @@ var i=0;
              document.getElementById('${r.id*777}'),
              ${r.id},
        
+
              
-             )"
+             document.getElementById('${r.id*6665}').value,
+             document.getElementById('${r.id*3333}').value,
+           
+             
+             ); "
           id="${r.id}" style="width:30px;"  value="0" />
           </td>
+
+
+
+
+          <td  >
+          <input style="width:60%;" type="text" 
+           id="${r.id*3333}" style="width:30px;"  value="0" />
+           </td>
+
+
+
+
+
+      
+
           <td id="${r.id*777}">${r.prix*0}</td>
           <td> <a onclick="Test(${r.id})">🗑️</a> </td>
 </tr>`;
+
+console.log(`object`, r.id);
     
 i++;
 
@@ -268,10 +291,13 @@ let products = [];
 function quantityChanged(
     // title,
     prix,value,totalP
-    ,id
-    //,title
+    ,id, Note
+
+    ,title
     ){
-    
+        //  alert("aaa"+Note+"aaa"+title);
+        //  id1=id*6665;
+        //  alert(document.getElementsByClassName(id1).length);
     // console.log(
     //     id
     // );
@@ -290,7 +316,7 @@ function quantityChanged(
                 dataProduit4PDF.push({
                     
                     "prix": prix,
-                    "title": produit.title,
+                    "title": produit.title+"   __  "+document.getElementById(id*3333).value,
                     "quanity": value,
                     "totalPrix" : prix*value
 
