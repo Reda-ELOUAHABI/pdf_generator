@@ -205,8 +205,9 @@ function show(data) {
           <th style="overflow-wrap: break-word; width:35%;">Title</th>
           <th style="width:10%;">Unity Price</th>
           <th hidden>  checked </th>
-          <th style="width:25%;" >Quantity </th>
+          
           <th style="width:25%;" >Details </th>
+          <th style="width:25%;" >Quantity </th>
           <th style="width:20%;" >Total Price </th>
           <th>Delete</th> 
          </tr>`;
@@ -224,6 +225,15 @@ var i=0;
        <td hidden>
        <input type="checkbox" />
         </td> 
+
+
+        
+        <td  >
+        <textarea style="width:60%;" type="textarea"  dir="rtl"
+         id="${r.id*3333}" style="width:30px;"  value="" ></textarea>
+         </td>
+
+
         <td  >
          <input style="width:60%;" type="number" 
          onchange="quantityChanged(
@@ -235,26 +245,10 @@ var i=0;
        
 
              
-             document.getElementById('${r.id*6665}').value,
-             document.getElementById('${r.id*3333}').value,
-           
              
              ); "
           id="${r.id}" style="width:30px;"  value="0" />
           </td>
-
-
-
-
-          <td  >
-          <input style="width:60%;" type="text" 
-           id="${r.id*3333}" style="width:30px;"  value="0" />
-           </td>
-
-
-
-
-
       
 
           <td id="${r.id*777}">${r.prix*0}</td>
@@ -291,9 +285,9 @@ let products = [];
 function quantityChanged(
     // title,
     prix,value,totalP
-    ,id, Note
+    ,id
 
-    ,title
+    
     ){
         //  alert("aaa"+Note+"aaa"+title);
         //  id1=id*6665;
@@ -316,7 +310,7 @@ function quantityChanged(
                 dataProduit4PDF.push({
                     
                     "prix": prix,
-                    "title": produit.title+"   __  "+document.getElementById(id*3333).value,
+                    "title": produit.title+"   _ "+document.getElementById(id*3333).value,
                     "quanity": value,
                     "totalPrix" : prix*value
 
