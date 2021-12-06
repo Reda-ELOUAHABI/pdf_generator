@@ -103,9 +103,6 @@ async function addRegion2API() {
 
 
     var Region2API = document.getElementById("RegionAPI").value;
-
-    
-
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
