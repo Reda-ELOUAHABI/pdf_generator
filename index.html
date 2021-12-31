@@ -12,43 +12,42 @@
 
 </head>
 
-<body onload="loadingFunction()">
-  <script>
-
-    function loadingFunction() {
-
-
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-
-      var rawsite = JSON.stringify({
-        "siteweb": "http--githubpages-pdfGenerator"
-      });
-
-      const api_count_browse = "https://reda-el-ouahabi.herokuapp.com/api/countBrowse";
-
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: rawsite,
-        redirect: 'follow'
-      };
-
-      fetch(api_count_browse, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-
-
-      //     setTimeout(function() {
-      //         alert(Region2API+"\ تمت اضافته بنجاح");
-      // location.reload();
-      //     }, 3000);
-      // }
-    }
-  </script>
-
+  <body onload="loadingFunction()">
+    <script>
+  
+      function loadingFunction() {
+  
+  
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+  
+  
+        var rawsite = JSON.stringify({
+          "siteweb": "http--githubpages-pdfGenerator"
+        });
+  
+        const api_count_browse = "http://localhost:3000/api/countBrowse";
+  
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: rawsite,
+          redirect: 'follow'
+        };
+  
+        fetch(api_count_browse, requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
+  
+  
+        //     setTimeout(function() {
+        //         alert(Region2API+"\ تمت اضافته بنجاح");
+        // location.reload();
+        //     }, 3000);
+        // }
+      }
+    </script>
 
   <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">فاتورة</button>
@@ -1345,7 +1344,7 @@ padding-top: 50px; */
 
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-  </script
+  </script>
   <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -1361,7 +1360,7 @@ padding-top: 50px; */
         }
       });
     }
-  </script?>
+  </script>
 
   <!-- Filling DropDownList from API [Reagions] -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
